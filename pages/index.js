@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Header from "../components/Header/Header";
+import Navbar from "../components/Utilities/NavBar";
 
 export default function Home() {
   return (
@@ -11,12 +13,13 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.png" />
       </Head>
-
+      <header>
+        <Navbar />
+      </header>
       <main>
-        <center>
-          <h1>Welcome to Job Hunt Bangladesh</h1>
-        </center>
+        <Header/>
       </main>
+      <footer></footer>
     </div>
   );
 }
