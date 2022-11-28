@@ -2,9 +2,13 @@
 
 ## Getting Started
 
-First, run the development server:
+First, install node & run the development server:
 
 ```bash
-npm install
+npm i
 npm run dev
+```
+
+```bash
+https://jobhunt-bangladesh.vercel.app/
 ```
