@@ -1,5 +1,11 @@
+/*----------------
+Google Font Import
+------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
+/*---------- 
+Global Style
+-----------*/
 html,
 body {
   padding: 0;
@@ -9,6 +15,10 @@ body {
   box-sizing: border-box;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
+
+/*---------- 
+Global Color
+------------*/
 .primary-color {
   color: #3c65f5 !important;
 }
@@ -21,6 +31,52 @@ body {
 .bg-secondary-color {
   background-color: #85ff83 !important;
 }
+/*----------
+Loading CSS
+------------*/
+.loading {
+  width: 40px;
+  height: 40px;
+  color: #85ff83;
+  background: conic-gradient(
+      from -45deg at top 20px left 50%,
+      #0000,
+      currentColor 1deg 90deg,
+      #0000 91deg
+    ),
+    conic-gradient(
+      from 45deg at right 20px top 50%,
+      #0000,
+      currentColor 1deg 90deg,
+      #0000 91deg
+    ),
+    conic-gradient(
+      from 135deg at bottom 20px left 50%,
+      #0000,
+      currentColor 1deg 90deg,
+      #0000 91deg
+    ),
+    conic-gradient(
+      from -135deg at left 20px top 50%,
+      #0000,
+      currentColor 1deg 90deg,
+      #0000 91deg
+    );
+  animation: load 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+@keyframes load {
+  50% {
+    width: 60px;
+    height: 60px;
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*----------
+Header Style
+------------*/
 .search-form {
   box-shadow: 0 18px 40px rgb(25 15 9 / 10%);
   border-radius: 8px;
