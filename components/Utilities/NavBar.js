@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -7,7 +8,12 @@ function NavBar() {
       <nav className="navbar navbar-expand-lg navbar-light py-4">
         <div className="container">
           <Link className="navbar-brand" href="/">
-            Job Hunt
+            <Image
+              src="/media/img/JobHunt-Logo.png"
+              alt="JobHunt Website Logo"
+              width={148}
+              height={36}
+            />
           </Link>
           <button
             className="navbar-toggler"
@@ -55,12 +61,12 @@ function NavBar() {
             </ul>
             <div className="d-flex">
               <div className="btn mx-2 text-decoration-underline">
-                <Link className="nav-link" href="/register">
+                <Link className="nav-link pt-1" href="/register">
                   Register
                 </Link>
               </div>
               <button className="btn bg-primary-color text-white px-4 py-2">
-                <Link className="nav-link" href="/sing-in">
+                <Link className="nav-link text-white" href="/sing-in">
                   Sing in
                 </Link>
               </button>

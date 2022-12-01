@@ -13,6 +13,7 @@
     "next": "13.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "reactstrap": "^9.1.5"
+    "reactstrap": "^9.1.5",
+    "swiper": "^8.4.5"
   }
 }
