@@ -11,7 +11,7 @@ export default function Home() {
           name="description"
           content="Job Hunt - Bangladesh || This Website is for job seekers in Bangladesh"
         />
-        <meta property="og:image" content="/media/img/JobHunt-Logo.png" />
+        <meta property="og:image" content="https://jobhunt-bangladesh.vercel.app/_next/image?url=%2Fmedia%2Fimg%2FJobHunt-Logo.png&w=256&q=75" />
         <link rel="icon" href="/favicon.png" />
       </Head>
       <header>
