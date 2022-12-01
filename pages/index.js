@@ -6,19 +6,18 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Job Hunt - Bangladesh</title>
+        <title>Home || Job Hunt - Bangladesh</title>
         <meta
           name="description"
-          content="Job Hunt - Bangladesh || It's a plartform for job seekers in Bangladesh"
+          content="Job Hunt - Bangladesh || This Website is for job seekers in Bangladesh"
         />
         <link rel="icon" href="/favicon.png" />
       </Head>
       <header>
         <Navbar />
+        <Header />
       </header>
-      <main>
-        <Header/>
-      </main>
+      <main></main>
       <footer></footer>
     </div>
   );

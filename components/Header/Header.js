@@ -7,7 +7,7 @@ const Header = () => {
         <h1 className="display-4 mt-3 mb-2 text-white fw-bolder py-4">
           The #1 <span className="secondary-color">Job Board in for</span>{" "}
           <br />
-          Hiring or Find Your Next Tob
+          Hiring or Find Your Next Job
         </h1>
         <p className="text-white fs-5">
           Each month, more than 3 million job seekers turn to website in their
