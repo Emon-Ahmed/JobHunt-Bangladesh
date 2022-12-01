@@ -153,3 +153,18 @@ select {
 }
 
 /* Header Box Style  */
+.item-logo {
+  border: 1px solid rgba(6,18,36,.1);
+  padding: 22px 18px;
+  display: flex;
+  width: 100%;
+  text-align: left;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  flex-wrap: wrap;
+}
+.image-left {
+  min-width: 50px;
+  padding-right: 10px;
+}

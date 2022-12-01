@@ -1,4 +1,5 @@
 import React from "react";
+import JobBox from "./JobBox";
 
 const Header = () => {
   return (
@@ -57,6 +58,7 @@ const Header = () => {
             </span>{" "}
           </p>
         </div>
+        <div className="jobs-list">{/* <JobBox /> */}</div>
       </div>
     </>
   );

@@ -11,6 +11,7 @@ export default function Home() {
           name="description"
           content="Job Hunt - Bangladesh || This Website is for job seekers in Bangladesh"
         />
+        <meta property="og:image" content="/media/img/JobHunt-Logo.png" />
         <link rel="icon" href="/favicon.png" />
       </Head>
       <header>
