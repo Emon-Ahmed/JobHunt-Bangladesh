@@ -14,7 +14,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://jobhunt-bangladesh.vercel.app/_next/image?url=%2Fmedia%2Fimg%2FJobHunt-Logo.png&w=256&q=75"
+          content="https://jobhunt-bangladesh.vercel.app/media/img/JobHunt.png"
         />
         <link rel="icon" href="/favicon.png" />
       </Head>
