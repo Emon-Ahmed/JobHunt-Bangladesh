@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "skill": ["Marketing", "Sale", "Remote"],
+    "name": "Marketing & Sale",
+    "icon": "/media/img/skillSet/marketing.svg",
+    "jobs": 1000,
+    "jobsAvailable": 105
+  },
+  {
+    "id": 2,
+    "skill": ["Software", "Engineer", "Remote"],
+    "name": "Software Engineer",
+    "icon": "/media/img/skillSet/marketing.svg",
+    "jobs": 1000,
+    "jobsAvailable": 110
+  },
+  {
+    "id": 3,
+    "skill": ["Web", "Design", "Designer", "Remote"],
+    "name": "Web Designer",
+    "icon": "/media/img/skillSet/marketing.svg",
+    "jobs": 1000,
+    "jobsAvailable": 70
+  },
+  {
+    "id": 4,
+    "skill": ["Graphics", "Design", "Designer", "Remote"],
+    "name": "Graphics Design",
+    "icon": "/media/img/skillSet/marketing.svg",
+    "jobs": 1000,
+    "jobsAvailable": 90
+  },
+  {
+    "id": 5,
+    "skill": ["Web", "Development", "Developer", "Remote"],
+    "name": "Web Development",
+    "icon": "/media/img/skillSet/marketing.svg",
+    "jobs": 1000,
+    "jobsAvailable": 95
+  },
+  {
+    "id": 6,
+    "skill": ["Android", "Developer", "Development", "Remote"],
+    "name": "Android Dev",
+    "icon": "/media/img/skillSet/marketing.svg",
+    "jobs": 1000,
+    "jobsAvailable": 72
+  }
+]

@@ -154,7 +154,7 @@ select {
 
 /* Header Box Style  */
 .item-logo {
-  border: 1px solid rgba(6,18,36,.1);
+  border: 1px solid rgba(6, 18, 36, 0.1);
   padding: 22px 18px;
   display: flex;
   width: 100%;
@@ -167,4 +167,10 @@ select {
 .image-left {
   min-width: 50px;
   padding-right: 10px;
+}
+.JobListSlide {
+  cursor: pointer !important;
+}
+.fontSize13 {
+  font-size: 13px !important;
 }

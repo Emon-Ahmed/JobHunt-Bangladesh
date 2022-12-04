@@ -15,7 +15,7 @@ const Header = () => {
             search for <br /> work, making over 140,000 applications every
             single day
           </p>
-          <div className="form-find">
+          <div className="form-find my-2">
             <form className="d-flex flex-md-row flex-column align-items-center justify-content-evenly">
               <div className="form-industry">
                 <select className="form-input w-100 form-style input-industry pl-35">
@@ -58,7 +58,9 @@ const Header = () => {
             </span>{" "}
           </p>
         </div>
-        <div className="jobs-list">{/* <JobBox /> */}</div>
+        <div className="jobs-list">
+          <JobBox />
+        </div>
       </div>
     </>
   );
