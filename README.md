@@ -4,7 +4,7 @@
 
 First, install node & run the development server:
 
-```bash
+```bash  
 npm i
 npm run dev
 ```
