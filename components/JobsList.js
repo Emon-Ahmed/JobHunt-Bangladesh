@@ -94,7 +94,7 @@ const JobsList = () => {
                 </div>
                 <div className="my-2">
                   {jobList.employment_info[7].skills.map((s) => (
-                    <span className="me-2 btn-secondary-color p-2 rounded fontSize12">
+                    <span className="me-2 mb-2 btn btn-secondary-color rounded fontSize12">
                       {s?.skill}
                     </span>
                   ))}

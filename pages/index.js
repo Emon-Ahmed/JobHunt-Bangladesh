@@ -1,4 +1,5 @@
 import Head from "next/head";
+import CandidatesList from "../components/CandidatesList";
 import Header from "../components/Header/Header";
 import JobsList from "../components/JobsList";
 import Navbar from "../components/Utilities/NavBar";
@@ -24,6 +25,7 @@ export default function Home() {
       </header>
       <main>
         <JobsList />
+        <CandidatesList />
       </main>
       <footer></footer>
     </div>
