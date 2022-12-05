@@ -31,6 +31,50 @@ Global Color
 .bg-secondary-color {
   background-color: #85ff83 !important;
 }
+.btn-secondary-color {
+  background-color: #d8f1ff !important;
+}
+.secondary-text {
+  color: #4f5e64;
+}
+.borderSecondary {
+  border-color: #4f5e64;
+}
+.img68 {
+  width: 68px;
+  height: 68px;
+}
+.img34 {
+  width: 34px;
+  height: 34px;
+}
+.img28 {
+  width: 28px;
+  height: 28px;
+}
+.fontSize15 {
+  font-size: 15px !important;
+}
+.fontSize14 {
+  font-size: 14px !important;
+}
+.fontSize13 {
+  font-size: 13px !important;
+}
+.fontSize12 {
+  font-size: 12px !important;
+}
+.fontSize11 {
+  font-size: 11px !important;
+}
+.fontSize10 {
+  font-size: 10px !important;
+}
+.noSpace {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 /*----------
 Loading CSS
 ------------*/
@@ -171,6 +215,16 @@ select {
 .JobListSlide {
   cursor: pointer !important;
 }
-.fontSize13 {
-  font-size: 13px !important;
+
+/*--------------
+Jobs List Style
+----------------*/
+
+.jobsTab {
+  border: 1px solid #4f5e64;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.jobsTabActive {
+  border: 1px solid #3c65f5;
 }

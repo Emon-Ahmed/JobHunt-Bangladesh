@@ -22,7 +22,9 @@ export default function Home() {
         <Navbar />
         <Header />
       </header>
-      <main></main>
+      <main>
+        <JobsList />
+      </main>
       <footer></footer>
     </div>
   );
