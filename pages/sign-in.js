@@ -39,7 +39,7 @@ const SingIn = () => {
                   type="text"
                   required=""
                   name="fullname"
-                  placeholder="Mahady Hasan Miraz"
+                  placeholder="Emon Ahmed"
                 />
               </div>
               <div className="form-group">
