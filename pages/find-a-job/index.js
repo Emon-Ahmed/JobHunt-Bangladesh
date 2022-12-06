@@ -1,5 +1,7 @@
 import Head from "next/head";
 import React from "react";
+import Footer from "../../components/Footer/Footer";
+import Newsletter from "../../components/Newsletter";
 import NavBar from "../../components/Utilities/NavBar";
 
 const FindAJob = () => {
@@ -13,8 +15,13 @@ const FindAJob = () => {
         />
         <link rel="icon" href="/favicon.png" />
       </Head>
+
       <NavBar />
-      <div>Find A Job</div>
+      
+      <div className="container">Find A Job</div>
+      
+      <Newsletter />
+      <Footer />
     </>
   );
 };

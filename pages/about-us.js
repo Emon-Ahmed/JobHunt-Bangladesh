@@ -1,6 +1,8 @@
 import Head from "next/head";
 import React from "react";
 import NavBar from "../components/Utilities/NavBar";
+import Footer from "../components/Footer/Footer";
+import Newsletter from "../components/Newsletter";
 
 const AboutUs = () => {
   return (
@@ -13,8 +15,13 @@ const AboutUs = () => {
         />
         <link rel="icon" href="/favicon.png" />
       </Head>
+      
       <NavBar />
-      <div>AboutUs</div>
+      
+      <div className="container">AboutUs</div>
+      
+      <Newsletter />
+      <Footer />
     </>
   );
 };

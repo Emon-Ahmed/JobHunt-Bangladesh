@@ -21,15 +21,18 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.png" />
       </Head>
+      
       <header>
         <Navbar />
         <Header />
       </header>
+      
       <main>
         <JobsList />
         <CandidatesList />
         <Newsletter />
       </main>
+      
       <footer>
         <Footer />
       </footer>
