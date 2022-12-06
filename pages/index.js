@@ -1,5 +1,6 @@
 import Head from "next/head";
 import CandidatesList from "../components/CandidatesList";
+import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import JobsList from "../components/JobsList";
 import Newsletter from "../components/Newsletter";
@@ -29,7 +30,9 @@ export default function Home() {
         <CandidatesList />
         <Newsletter />
       </main>
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
