@@ -236,3 +236,47 @@ Jobs List Style
 .jobsTabActive {
   border: 1px solid #3c65f5;
 }
+
+/*---------------
+Newsletter Style
+-----------------*/
+.box-newsletter {
+  padding: 57px 0 96px;
+  background: url("/media/img/newsletter/bg-newsletter.svg") no-repeat 0 0;
+  background-size: cover;
+  border-radius: 16px;
+}
+.box-form-newsletter {
+  background: #fff;
+  max-width: 610px;
+  padding: 10px;
+  border-radius: 10px;
+  margin: auto;
+}
+.input-newsletter {
+  width: 90%;
+  border: 0;
+  min-height: 60px;
+  background-image: url("/media/img/newsletter/email.svg");
+  background-repeat: no-repeat;
+  background-position: left 17px center;
+  padding: 15px 15px 15px 60px;
+}
+.font-heading {
+  font-weight: 500;
+}
+.btn-newsletter {
+  color: #fff;
+  background-color: #3c65f5;
+  line-height: 26px;
+  padding: 10px 25px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.input-newsletter:focus {
+  outline: none !important;
+  border: none !important;
+}

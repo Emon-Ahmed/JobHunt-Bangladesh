@@ -2,6 +2,7 @@ import Head from "next/head";
 import CandidatesList from "../components/CandidatesList";
 import Header from "../components/Header/Header";
 import JobsList from "../components/JobsList";
+import Newsletter from "../components/Newsletter";
 import Navbar from "../components/Utilities/NavBar";
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
       <main>
         <JobsList />
         <CandidatesList />
+        <Newsletter />
       </main>
       <footer></footer>
     </div>
