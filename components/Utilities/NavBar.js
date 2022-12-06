@@ -66,8 +66,8 @@ function NavBar() {
                 </Link>
               </div>
               <button className="btn bg-primary-color text-white px-4 py-2">
-                <Link className="nav-link text-white" href="/sing-in">
-                  Sing in
+                <Link className="nav-link text-white" href="/sign-in">
+                  Sign in
                 </Link>
               </button>
             </div>

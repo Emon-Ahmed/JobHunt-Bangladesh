@@ -280,6 +280,47 @@ Newsletter Style
   outline: none !important;
   border: none !important;
 }
-/*-----------
-Footer Style
--------------*/
+
+/*-----------------
+Sing In Page style
+------------------*/
+.form-group {
+  margin-bottom: 1rem;
+}
+.login-register input {
+  height: 53px;
+  line-height: 53px;
+  font-size: 14px;
+}
+.form-group input {
+  background: #fff;
+  border: 1px solid #e0e6f6;
+  height: 53px;
+  box-shadow: none;
+  padding-left: 20px;
+  font-size: 16px;
+  width: 100%;
+}
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+input[type="text"],
+input[type="password"],
+input[type="time"] {
+  border: 1px solid #e0e6f7;
+  border-radius: 4px;
+}
+.login-btn {
+  border-radius: 8px;
+  padding: 13px 25px;
+  font-size: 14px;
+  line-height: 1;
+  transition: 0.2s;
+  padding: 18px 25px;
+  background: #05264e;
+  color: #fff;
+  border-radius: 4px;
+}
+.no-outline:focus {
+  outline: none !important;
+}
