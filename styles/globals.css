@@ -40,6 +40,9 @@ Global Color
 .borderSecondary {
   border-color: #4f5e64;
 }
+.cursorPointer{
+  cursor: pointer;
+}
 .img68 {
   width: 68px;
   height: 68px;
@@ -323,4 +326,14 @@ input[type="time"] {
 }
 .no-outline:focus {
   outline: none !important;
+}
+
+/*-------------
+Hire And Apply
+---------------*/
+.hire-box {
+  background-color: #fff6f1;
+}
+.apply-box {
+  background-color: #eff7ff;
 }

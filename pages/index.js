@@ -2,6 +2,7 @@ import Head from "next/head";
 import CandidatesList from "../components/CandidatesList";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
+import HireAndApply from "../components/HireAndApply";
 import JobsList from "../components/JobsList";
 import Newsletter from "../components/Newsletter";
 import Navbar from "../components/Utilities/NavBar";
@@ -30,6 +31,7 @@ export default function Home() {
       <main>
         <JobsList />
         <CandidatesList />
+        <HireAndApply />
         <Newsletter />
       </main>
       
