@@ -1,11 +1,11 @@
 import Head from "next/head";
-import CandidatesList from "../components/CandidatesList";
-import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
-import HireAndApply from "../components/HireAndApply";
-import JobsList from "../components/JobsList";
-import Newsletter from "../components/Newsletter";
-import Navbar from "../components/Utilities/NavBar";
+import NavBar from "../components/Frontend/Header/NavBar";
+import Headers from "../components/Frontend/Header/Header";
+import JobsList from "../components/Frontend/Home/JobsList";
+import CandidatesList from "../components/Frontend/Home/CandidatesList";
+import HireAndApply from "../components/Frontend/Home/HireAndApply";
+import Newsletter from "../components/Frontend/Home/Newsletter";
+import Footer from "../components/Frontend/Footer/Footer";
 
 export default function Home() {
   return (
@@ -22,19 +22,19 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      
+
       <header>
-        <Navbar />
-        <Header />
+        <NavBar />
+        <Headers />
       </header>
-      
+
       <main>
         <JobsList />
         <CandidatesList />
         <HireAndApply />
         <Newsletter />
       </main>
-      
+
       <footer>
         <Footer />
       </footer>

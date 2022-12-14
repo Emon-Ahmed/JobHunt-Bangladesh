@@ -1,5 +1,5 @@
 import React from "react";
-import JobsDB from "./../db/jobs.json";
+import JobsDB from "./../../../db/jobs.json";
 const CandidatesList = () => {
   return (
     <>

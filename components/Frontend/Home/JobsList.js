@@ -1,5 +1,5 @@
 import React from "react";
-import JobsDB from "./../db/jobs.json";
+import JobsDB from "./../../../db/jobs.json";
 
 const JobsList = () => {
   const limitJobsList = JobsDB.slice(0, 5);

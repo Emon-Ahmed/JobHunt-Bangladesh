@@ -1,8 +1,8 @@
 import Head from "next/head";
 import React from "react";
-import Footer from "../../components/Footer/Footer";
-import Newsletter from "../../components/Newsletter";
-import NavBar from "../../components/Utilities/NavBar";
+import NavBar from "../../components/Frontend/Header/NavBar";
+import Newsletter from "../../components/Frontend/Home/Newsletter";
+import Footer from "../../components/Frontend/Footer/Footer";
 
 const Recruiters = () => {
   return (
@@ -15,11 +15,11 @@ const Recruiters = () => {
         />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      
+
       <NavBar />
-      
+
       <div className="container">Recruiters</div>
-      
+
       <Newsletter />
       <Footer />
     </>

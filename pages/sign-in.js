@@ -1,8 +1,8 @@
-import Head from "next/head";
 import React from "react";
-import NavBar from "../components/Utilities/NavBar";
-import Footer from "../components/Footer/Footer";
+import Head from "next/head";
 import Link from "next/link";
+import NavBar from "../components/Frontend/Header/NavBar";
+import Footer from "../components/Frontend/Footer/Footer";
 
 const SingIn = () => {
   return (

@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
-import Footer from "../components/Footer/Footer";
-import NavBar from "./../components/Utilities/NavBar";
+import NavBar from "../components/Frontend/Header/NavBar";
+import Footer from "../components/Frontend/Footer/Footer";
 
 const NotFound = () => {
   return (

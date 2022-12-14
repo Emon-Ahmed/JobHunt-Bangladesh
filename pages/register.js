@@ -1,8 +1,8 @@
 import Head from "next/head";
 import React from "react";
-import NavBar from "../components/Utilities/NavBar";
-import Footer from "../components/Footer/Footer";
 import Link from "next/link";
+import NavBar from "../components/Frontend/Header/NavBar";
+import Footer from "../components/Frontend/Footer/Footer";
 
 const Register = () => {
   return (
@@ -15,7 +15,7 @@ const Register = () => {
         />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      
+
       <NavBar />
 
       <div className="container py-5 my-5">
@@ -101,16 +101,16 @@ const Register = () => {
                 </div>
               </div>
               <div className="text-muted text-center">
-              Already have an account?{" "}
+                Already have an account?{" "}
                 <Link className="text-decoration-none" href="/sign-in">
-                Sign in
+                  Sign in
                 </Link>
               </div>
             </form>
           </div>
         </div>
       </div>
-      
+
       <Footer />
     </>
   );

@@ -40,7 +40,7 @@ Global Color
 .borderSecondary {
   border-color: #4f5e64;
 }
-.cursorPointer{
+.cursorPointer {
   cursor: pointer;
 }
 .img68 {
@@ -205,6 +205,9 @@ select {
 }
 .pl-35 {
   padding-left: 35px;
+}
+.form-industry input[type="text"] {
+  border: 0px !important;
 }
 
 /* Header Box Style  */

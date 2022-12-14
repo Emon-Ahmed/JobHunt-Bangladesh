@@ -1,7 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import SkillSetDB from "./../../db/skillSet.json";
+import SkillSetDB from "./../../../db/skillSet.json";
 
 const JobBox = () => {
   return (
