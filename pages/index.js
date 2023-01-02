@@ -6,6 +6,7 @@ import CandidatesList from "../components/Frontend/Home/CandidatesList";
 import HireAndApply from "../components/Frontend/Home/HireAndApply";
 import Newsletter from "../components/Frontend/Home/Newsletter";
 import Footer from "../components/Frontend/Footer/Footer";
+import TrustedCompanyList from "../components/Frontend/Home/TrustedCompanyList";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       <main>
         <JobsList />
         <CandidatesList />
+        <TrustedCompanyList />
         <HireAndApply />
         <Newsletter />
       </main>

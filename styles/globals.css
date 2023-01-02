@@ -258,10 +258,11 @@ Newsletter Style
   padding: 10px;
   border-radius: 10px;
   margin: auto;
+  border: 0px !important;
 }
 .input-newsletter {
   width: 90%;
-  border: 0;
+  border: 0 !important;
   min-height: 60px;
   background-image: url("/media/img/newsletter/email.svg");
   background-repeat: no-repeat;

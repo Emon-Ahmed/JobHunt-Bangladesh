@@ -1,1 +1,122 @@
-[{}]
+[
+  {
+    "id": 1,
+    "name": "Emon Ahmed",
+    "designation": "Developer",
+    "img": "https://avatars.githubusercontent.com/u/61699936?v=4",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio veritatis culpa eveniet nemo praesentium repellat.",
+    "skills": [
+      { "skill": "HTML" },
+      { "skill": "CSS" },
+      { "skill": "JS" },
+      { "skill": "ReactJS" }
+    ],
+    "location": "Dhaka",
+    "hourly": "90"
+  },
+  {
+    "id": 2,
+    "name": "Cody Fisher",
+    "designation": "Python Developer",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/user2.png",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio veritatis culpa eveniet nemo praesentium repellat.",
+    "skills": [
+      { "skill": "HTML" },
+      { "skill": "CSS" },
+      { "skill": "JS" },
+      { "skill": "ReactJS" }
+    ],
+    "location": "Dhaka",
+    "hourly": "50"
+  },
+  {
+    "id": 3,
+    "name": "Jerome Bell",
+    "designation": "Content Manager",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/user3.png",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio veritatis culpa eveniet nemo praesentium repellat.",
+    "skills": [
+      { "skill": "HTML" },
+      { "skill": "CSS" },
+      { "skill": "JS" },
+      { "skill": "ReactJS" }
+    ],
+    "location": "Dhaka",
+    "hourly": "20"
+  },
+  {
+    "id": 4,
+    "name": "Jane Cooper",
+    "designation": "UI Designer",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/user4.png",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio veritatis culpa eveniet nemo praesentium repellat.",
+    "skills": [
+      { "skill": "HTML" },
+      { "skill": "CSS" },
+      { "skill": "JS" },
+      { "skill": "ReactJS" }
+    ],
+    "location": "Dhaka",
+    "hourly": "30"
+  },
+  {
+    "id": 5,
+    "name": "Floyd Miles",
+    "designation": "Photo Editing",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/user5.png",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio veritatis culpa eveniet nemo praesentium repellat.",
+    "skills": [
+      { "skill": "HTML" },
+      { "skill": "CSS" },
+      { "skill": "JS" },
+      { "skill": "ReactJS" }
+    ],
+    "location": "Dhaka",
+    "hourly": "60"
+  },
+  {
+    "id": 6,
+    "name": "Devon Lane",
+    "designation": "Online Marketing",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/user6.png",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio veritatis culpa eveniet nemo praesentium repellat.",
+    "skills": [
+      { "skill": "HTML" },
+      { "skill": "CSS" },
+      { "skill": "JS" },
+      { "skill": "ReactJS" }
+    ],
+    "location": "Dhaka",
+    "hourly": "45"
+  },
+  {
+    "id": 7,
+    "name": "Jerome Bell",
+    "designation": "UI/UX Designer",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/user7.png",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio veritatis culpa eveniet nemo praesentium repellat.",
+    "skills": [
+      { "skill": "HTML" },
+      { "skill": "CSS" },
+      { "skill": "JS" },
+      { "skill": "ReactJS" }
+    ],
+    "location": "Dhaka",
+    "hourly": "50"
+  },
+  {
+    "id": 8,
+    "name": "Eleanor",
+    "designation": "UI Designer",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/user8.png",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio veritatis culpa eveniet nemo praesentium repellat.",
+    "skills": [
+      { "skill": "HTML" },
+      { "skill": "CSS" },
+      { "skill": "JS" },
+      { "skill": "ReactJS" }
+    ],
+    "location": "Dhaka",
+    "hourly": "70"
+  }
+]
