@@ -1,1 +1,66 @@
-[{}]
+[
+  {
+    "id": 1,
+    "name": "Linkedin",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/brands/brand-1.png",
+    "location": "Dhaka",
+    "jobs": "20",
+    "rate": 5
+  },
+  {
+    "id": 2,
+    "name": "Adobe",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/brands/brand-2.png",
+    "location": "New York, US",
+    "jobs": "20",
+    "rate": 4
+  },
+  {
+    "id": 3,
+    "name": "Dailymotion",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/brands/brand-3.png",
+    "location": "Dhaka",
+    "jobs": "20",
+    "rate": 4.5
+  },
+  {
+    "id": 4,
+    "name": "NewSum",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/brands/brand-4.png",
+    "location": "Dhaka",
+    "jobs": "20",
+    "rate": 5
+  },
+  {
+    "id": 5,
+    "name": "PowerHome",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/brands/brand-5.png",
+    "location": "New York, US",
+    "jobs": "20",
+    "rate": 3
+  },
+  {
+    "id": 6,
+    "name": "Whop.com",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/brands/brand-6.png",
+    "location": "Khulna",
+    "jobs": "20",
+    "rate": 4
+  },
+  {
+    "id": 7,
+    "name": "Greewood",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/brands/brand-7.png",
+    "location": "Dhaka",
+    "jobs": "20",
+    "rate": 4.5
+  },
+  {
+    "id": 8,
+    "name": "Kentucky",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/brands/brand-8.png",
+    "location": "New York, US",
+    "jobs": "20",
+    "rate": 5
+  }
+]

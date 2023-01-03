@@ -47,6 +47,10 @@ Global Color
   width: 68px;
   height: 68px;
 }
+.img48 {
+  width: 48px;
+  height: 48px;
+}
 .img34 {
   width: 34px;
   height: 34px;
@@ -62,6 +66,12 @@ Global Color
 .img18 {
   width: 18px;
   height: 18px;
+}
+.fontSize17 {
+  font-size: 17px !important;
+}
+.fontSize16 {
+  font-size: 16px !important;
 }
 .fontSize15 {
   font-size: 15px !important;
