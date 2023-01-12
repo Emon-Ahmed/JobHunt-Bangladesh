@@ -3,26 +3,13 @@ import React from "react";
 import NavBar from "../components/Frontend/Header/NavBar";
 import Newsletter from "../components/Frontend/Home/Newsletter";
 import Footer from "../components/Frontend/Footer/Footer";
-
+import Breadcrumb from "../components/Utilities/Breadcrumb";
+import Link from "next/link";
+import Members from "../components/Utilities/Members";
 
 const AboutUs = () => {
   return (
     <>
-      <Head>
-        <title>About Us || Job Hunt - Bangladesh</title>
-        <meta
-          name="description"
-          content="Job Hunt - Bangladesh || This Website is for job seekers in Bangladesh"
-        />
-        <link rel="icon" href="/favicon.png" />
-      </Head>
-      
-      <NavBar />
-      
-      <div className="container">AboutUs</div>
-      
-      <Newsletter />
-      <Footer />
     </>
   );
 };

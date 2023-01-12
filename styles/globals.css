@@ -34,6 +34,9 @@ Global Color
 .btn-secondary-color {
   background-color: #d8f1ff !important;
 }
+.secondary-button-color {
+  background-color: #05264e !important;
+}
 .secondary-text {
   color: #4f5e64;
 }
@@ -350,4 +353,69 @@ Hire And Apply
 }
 .apply-box {
   background-color: #eff7ff;
+}
+
+/*-----------
+ Breadcrumb
+-------------*/
+.breadcrumb {
+  background-image: url("/media/img/company.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/*-------
+About Us
+---------*/
+.about-us {
+  width: 60%;
+}
+@media (max-width: 992px) {
+  .about-us {
+    width: 100%;
+  }
+}
+.icons {
+  width: 28px;
+  height: 28px;
+  padding: 5px;
+  margin: 1px;
+  border: 1px solid grey !important;
+  background: #fff;
+  color: gray;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.icons:hover {
+  color: white;
+  background-color: gray;
+}
+
+/*--------
+Contact Us
+----------*/
+.contact-form {
+  width: 45%;
+  margin: 10px 16px 0 0;
+}
+/* Candidates  */
+.candidates-bg {
+  background-color: #f2f6fd;
+}
+
+.recruiters-box {
+  background-color: #f8faff;
+}
+.recruiters-btn {
+  background-color: #e0e6f7;
+}
+.hover-white:hover{
+  background-color: #fff !important;
 }

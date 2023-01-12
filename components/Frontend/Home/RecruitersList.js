@@ -1,6 +1,7 @@
 import React from "react";
 import Recruiters from "./../../../db/Recruiters.json";
-import { Rating } from 'react-simple-star-rating'
+import { Rating } from "react-simple-star-rating";
+import PageBreadcrumb from "../../Utilities/PageBreadcrumb";
 
 const RecruitersList = () => {
   return (
@@ -25,9 +26,17 @@ const RecruitersList = () => {
                       alt="Company"
                     />
                     <div className="ms-2">
-                      <div className="fontSize17 fw-bolder">{recruiter.name}</div>
+                      <div className="fontSize17 fw-bolder">
+                        {recruiter.name}
+                      </div>
                       <div className="d-flex align-items-center">
-                        <span className="fontSize12"><Rating readonly="false" size="14" initialValue={recruiter?.rate}/></span>
+                        <span className="fontSize12">
+                          <Rating
+                            readonly="false"
+                            size="14"
+                            initialValue={recruiter?.rate}
+                          />
+                        </span>
                       </div>
                     </div>
                   </div>

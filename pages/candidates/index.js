@@ -3,27 +3,15 @@ import React from "react";
 import NavBar from "../../components/Frontend/Header/NavBar";
 import Newsletter from "../../components/Frontend/Home/Newsletter";
 import Footer from "../../components/Frontend/Footer/Footer";
+import CandidateDB from "./../../db/candidates.json";
+import PageBreadcrumb from "../../components/Utilities/PageBreadcrumb";
 
-const Candidates = () => {
+const Candidate = () => {
   return (
     <>
-      <Head>
-        <title>Candidates || Job Hunt - Bangladesh</title>
-        <meta
-          name="description"
-          content="Candidates || Job Hunt - Bangladesh || This Website is for job seekers in Bangladesh"
-        />
-        <link rel="icon" href="/favicon.png" />
-      </Head>
 
-      <NavBar />
-
-      <div className="container">Candidates</div>
-
-      <Newsletter />
-      <Footer />
     </>
   );
 };
 
-export default Candidates;
+export default Candidate;

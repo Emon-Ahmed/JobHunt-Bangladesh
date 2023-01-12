@@ -59,7 +59,7 @@ const SingIn = () => {
               <div className="text-end">
                 <Link
                   className="text-muted text-decoration-none pb-3"
-                  href="/forget-password"
+                  href="/forgot-password"
                 >
                   Forgot Password
                 </Link>

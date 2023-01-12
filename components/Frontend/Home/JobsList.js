@@ -38,42 +38,6 @@ const JobsList = () => {
       </div>
       <div className="py-3">
         <div className="row">
-          {/* <div className="col-md-3">
-            <div className="px-3 py-4 m-2 rounded-4 border border-1 borderSecondary">
-              <h5>UX Designer & Researcher</h5>
-              <div className="d-flex py-2 justify-content-between">
-                <span>Remote</span>
-                <span>3 mins ago</span>
-              </div>
-              <div className="">
-                <span className="btn-secondary-color p-2 rounded fontSize13">
-                  HTML
-                </span>
-                <span className="btn-secondary-color p-2 m-2 rounded fontSize13">
-                  HTML
-                </span>
-              </div>
-              <hr />
-              <div className="d-flex justify-content-between align-items-center">
-                <div className="d-flex justify-content-between align-items-center">
-                  <img
-                    className="img34 rounded-circle"
-                    src="/media/img/JobHunt-Company.png"
-                    alt="Company"
-                  />
-                  <div className="ms-2">
-                    <div className="fontSize15 fw-bold">Linkedin</div>
-                    <div className="fontSize11">Dhaka</div>
-                  </div>
-                </div>
-                <div>
-                  <div>
-                    <span className="fw-bold primary-color">$800</span>/month
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
           {JobsDB.map((jobList) => (
             <div key={jobList.id} className="col-xl-3 col-md-6 col-lg-4 g-2">
               <div className="px-2 py-4 m-2 rounded-4 border border-1 borderSecondary">

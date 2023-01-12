@@ -20,12 +20,12 @@ const CandidatesList = () => {
                 className="col-xl-3 col-md-6 col-lg-4 g-2"
               >
                 <div className="px-2 py-4 m-2 rounded-4 border border-1 borderSecondary">
-                  <div className="row g-3 mb-3 align-items-center">
-                    <div className="col-md-6 col-lg-6 p-5 p-lg-0">
+                  <div className="row g-3 mb-3 align-items-center justify-content-center">
+                    <div className="col-md-6 col-lg-6 p-5 p-lg-0 d-flex align-items-center justify-content-center">
                       <img
                         className="w-100 p-1 rounded-circle"
-                        src={candidate.img}
-                        alt=""
+                        src={candidate?.img}
+                        alt="Candidate"
                       />
                     </div>
                     <div className="col-md-6 col-lg-6 text-center text-md-start">

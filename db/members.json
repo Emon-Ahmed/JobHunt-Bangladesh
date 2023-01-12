@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Emon Ahmed",
+    "designation": "Web Developer",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/user1.png",
+    "social": [
+      { "facebook": "#" },
+      { "twitter": "#" },
+      { "instagram": "#" },
+      { "linkedin": "#" }
+    ],
+    "location": "Dhaka",
+    "rate": 5
+  },
+  {
+    "id": 2,
+    "name": "Floyd Miles",
+    "designation": "Photo Editing",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/user2.png",
+    "social": [
+      { "facebook": "#" },
+      { "twitter": "#" },
+      { "instagram": "#" },
+      { "linkedin": "#" }
+    ],
+    "location": "Dhaka",
+    "rate": 4
+  },
+  {
+    "id": 3,
+    "name": "Floyd Miles",
+    "designation": "Photo Editing",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/user3.png",
+    "social": [
+      { "facebook": "#" },
+      { "twitter": "#" },
+      { "instagram": "#" },
+      { "linkedin": "#" }
+    ],
+    "location": "Dhaka",
+    "rate": 5
+  },
+  {
+    "id": 4,
+    "name": "Floyd Miles",
+    "designation": "Photo Editing",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/user4.png",
+    "social": [
+      { "facebook": "#" },
+      { "twitter": "#" },
+      { "instagram": "#" },
+      { "linkedin": "#" }
+    ],
+    "location": "Dhaka",
+    "rate": 5
+  },
+  {
+    "id": 5,
+    "name": "Floyd Miles",
+    "designation": "Photo Editing",
+    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/user5.png",
+    "social": [
+      { "facebook": "#" },
+      { "twitter": "#" },
+      { "instagram": "#" },
+      { "linkedin": "#" }
+    ],
+    "location": "Dhaka",
+    "rate": 5
+  }
+]
