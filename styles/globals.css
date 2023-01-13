@@ -419,3 +419,6 @@ Contact Us
 .hover-white:hover{
   background-color: #fff !important;
 }
+.company_logo{
+  margin-top: -40px;
+}
