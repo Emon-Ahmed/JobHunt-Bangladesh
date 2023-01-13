@@ -430,3 +430,6 @@ Contact Us
 .profile_setting button {
   border: 1px solid #e0e6e7 !important;
 }
+.register-btn .btn {
+  border: none !important;
+}

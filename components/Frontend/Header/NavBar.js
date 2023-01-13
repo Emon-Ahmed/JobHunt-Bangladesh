@@ -59,7 +59,7 @@ function NavBar() {
                 </Link>
               </li>
             </ul>
-            <div className="d-flex">
+            <div className="d-flex register-btn">
               <div className="btn mx-2 text-decoration-underline">
                 <Link className="nav-link pt-1" href="/register">
                   Register
