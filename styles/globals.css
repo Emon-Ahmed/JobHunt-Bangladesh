@@ -416,9 +416,17 @@ Contact Us
 .recruiters-btn {
   background-color: #e0e6f7;
 }
-.hover-white:hover{
+.hover-white:hover {
   background-color: #fff !important;
 }
-.company_logo{
+.company_logo {
   margin-top: -40px;
+}
+.profile_setting .active {
+  color: black !important;
+  background-color: white !important;
+  border: 1px solid #4f5e64 !important;
+}
+.profile_setting button {
+  border: 1px solid #e0e6e7 !important;
 }
