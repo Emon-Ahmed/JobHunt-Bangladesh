@@ -69,19 +69,22 @@ function NavBar() {
                     Register
                   </Link>
                 </div>
-                <button className="btn bg-primary-color text-white px-4 py-2">
-                  <Link className="nav-link text-white" href="/sign-in">
-                    Sign in
-                  </Link>
-                </button>
+                <Link href="/sign-in">
+                  <button className="btn bg-primary-color text-white px-4 py-2">
+                    <span className="nav-link text-white">Sign in</span>
+                  </button>
+                </Link>
               </div>
             ) : (
               <div className="d-flex register-btn">
-                <button onClick={() => signOut()} className="btn bg-danger text-white px-4 py-2">
-                  <Link className="nav-link text-white" href="/sign-in">
-                    Logout
-                  </Link>
-                </button>
+                <Link href="/sign-in">
+                  <button
+                    onClick={() => signOut()}
+                    className="btn bg-danger text-white px-4 py-2"
+                  >
+                    <spam className="nav-link text-white">Logout</spam>
+                  </button>
+                </Link>
               </div>
             )}
           </div>
