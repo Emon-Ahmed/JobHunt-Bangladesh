@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useSession, signOut } from "next-auth/react";
 
 function NavBar() {
+  const { data: session } = useSession();
+  console.log(session);
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light py-4">
@@ -59,18 +62,28 @@ function NavBar() {
                 </Link>
               </li>
             </ul>
-            <div className="d-flex register-btn">
-              <div className="btn mx-2 text-decoration-underline">
-                <Link className="nav-link pt-1" href="/register">
-                  Register
-                </Link>
+            {!session?.user ? (
+              <div className="d-flex register-btn">
+                <div className="btn mx-2 text-decoration-underline">
+                  <Link className="nav-link pt-1" href="/register">
+                    Register
+                  </Link>
+                </div>
+                <button className="btn bg-primary-color text-white px-4 py-2">
+                  <Link className="nav-link text-white" href="/sign-in">
+                    Sign in
+                  </Link>
+                </button>
               </div>
-              <button className="btn bg-primary-color text-white px-4 py-2">
-                <Link className="nav-link text-white" href="/sign-in">
-                  Sign in
-                </Link>
-              </button>
-            </div>
+            ) : (
+              <div className="d-flex register-btn">
+                <button onClick={() => signOut()} className="btn bg-danger text-white px-4 py-2">
+                  <Link className="nav-link text-white" href="/sign-in">
+                    Logout
+                  </Link>
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </nav>

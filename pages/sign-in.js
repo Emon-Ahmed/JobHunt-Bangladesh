@@ -3,8 +3,11 @@ import Head from "next/head";
 import Link from "next/link";
 import NavBar from "../components/Frontend/Header/NavBar";
 import Footer from "../components/Frontend/Footer/Footer";
+import { FcGoogle } from "react-icons/fc";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const SingIn = () => {
+
   return (
     <>
       <Head>
@@ -67,6 +70,16 @@ const SingIn = () => {
               <div className="d-flex justify-content-center align-items-center my-3 text-center">
                 <div className="login-btn w-100" type="submit" name="login">
                   Login
+                </div>
+              </div>
+              <div onClick={() => signIn('google',{callbackUrl:"http://localhost:3000/profile"})} className="d-flex justify-content-center align-items-center my-3 text-center">
+                <div
+                  className="d-flex align-items-center justify-content-center border rounded-1 border-1 border-dark py-2 w-100"
+                  type="submit"
+                  name="login"
+                >
+                  <FcGoogle className="fs-5" />{" "}
+                  <span className="ps-2">Login with Google</span>
                 </div>
               </div>
               <div className="text-muted text-center">
