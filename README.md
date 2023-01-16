@@ -1,5 +1,5 @@
 # JobHunt Bangladesh
-> Job Hunt - Bangladesh || This Website is for job seekers in Bangladesh.
+> Job Hunt - Bangladesh || This Website is for job seekers in Bangladesh
 > Live Demo [_Click Here_](https://jobhunt-bangladesh.vercel.app/) <!-- If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
