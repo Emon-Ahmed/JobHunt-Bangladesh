@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import NavBar from "../components/Frontend/Header/NavBar";
 import Footer from "../components/Frontend/Footer/Footer";
 import { FcGoogle } from "react-icons/fc";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { signIn } from "next-auth/react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useRouter } from "next/router";
 
 const SingIn = () => {
-
+  const validate = (values) => {
+    const errors = {};
+    if (!values.email) {
+      errors.email = "Required";
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+    ) {
+      errors.email = "Invalid email address";
+    }
+    if (!values.password) {
+      errors.password = "Required";
+    } else if (values.password.length < 8) {
+      errors.password = "Must be greater then 8 characters";
+    }
+    return errors;
+  };
+  const router = useRouter()
   return (
     <>
       <Head>
@@ -31,64 +49,99 @@ const SingIn = () => {
                 Access to all features. No credit card required.
               </p>
             </div>
-            <form className="login-register text-start my-5">
-              <div className="form-group">
-                <label className="form-label fontSize14" for="input-1">
-                  Username or Email address *
-                </label>
-                <input
-                  className="no-outline"
-                  id="input-1"
-                  type="text"
-                  required=""
-                  name="fullname"
-                  placeholder="Emon Ahmed"
-                />
-              </div>
-              <div className="form-group">
-                <label className="form-label fontSize14" for="input-4">
-                  Password *
-                </label>
-                <input
-                  className=" no-outline"
-                  id="input-4"
-                  type="password"
-                  required=""
-                  name="password"
-                  placeholder="************"
-                />
-              </div>
+            <Formik
+              initialValues={{
+                email: "",
+                password: "",
+              }}
+              onSubmit={async (values) => {
+                // console.log(values);
+                const status = await signIn('credentials',{
+                  redirect: false,
+                  email: values.email,
+                  password: values.password,
+                  callbackUrl: '/profile'
+                })
+                if(status.ok) router.push(status.url)
+              }}
+              validate={validate}
+            >
+              <Form className="login-register text-start my-5">
+                <div className="form-group">
+                  <label className="form-label fontSize14" htmlFor="email">
+                    Email address *
+                  </label>
+                  <Field
+                    className="no-outline"
+                    id="email"
+                    type="text"
+                    required
+                    name="email"
+                    placeholder="Email address"
+                  />
+                  <div className="fontSize14 pt-1 text-center text-danger">
+                    <ErrorMessage name="email" />
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label className="form-label fontSize14" htmlFor="password">
+                    Password *
+                  </label>
+                  <Field
+                    className=" no-outline"
+                    id="password"
+                    type="password"
+                    required
+                    name="password"
+                    placeholder="************"
+                  />
+                  <div className="fontSize14 pt-1 text-center text-danger">
+                    <ErrorMessage name="password" />
+                  </div>
+                </div>
 
-              <div className="text-end">
-                <Link
-                  className="text-muted text-decoration-none pb-3"
-                  href="/forgot-password"
-                >
-                  Forgot Password
-                </Link>
-              </div>
-              <div className="d-flex justify-content-center align-items-center my-3 text-center">
-                <div className="login-btn w-100" type="submit" name="login">
-                  Login
+                <div className="text-end">
+                  <Link
+                    className="text-muted text-decoration-none pb-3"
+                    href="/forgot-password"
+                  >
+                    Forgot Password
+                  </Link>
                 </div>
-              </div>
-              <div onClick={() => signIn('google',{callbackUrl:"http://localhost:3000/profile"})} className="d-flex justify-content-center align-items-center my-3 text-center">
+                <div className="border-remove-btn d-flex justify-content-center align-items-center my-3 text-center">
+                  <button
+                    className="login-btn w-100"
+                    type="submit"
+                    name="login"
+                  >
+                    Login
+                  </button>
+                </div>
                 <div
-                  className="d-flex align-items-center justify-content-center border rounded-1 border-1 border-dark py-2 w-100"
-                  type="submit"
-                  name="login"
+                  onClick={() =>
+                    signIn("google", {
+                      callbackUrl: "http://localhost:3000/profile",
+                    })
+                  }
+                  className="d-flex justify-content-center align-items-center my-3 text-center"
                 >
-                  <FcGoogle className="fs-5" />{" "}
-                  <span className="ps-2">Login with Google</span>
+                  <div
+                    className="d-flex align-items-center justify-content-center border rounded-1 border-1 border-dark py-2 w-100"
+                    type="submit"
+                    name="login"
+                  >
+                    <FcGoogle className="fs-5" />{" "}
+                    <span className="ps-2">Login with Google</span>
+                  </div>
                 </div>
-              </div>
-              <div className="text-muted text-center">
-                Don't have an Account?{" "}
-                <Link className="text-decoration-none" href="/register">
-                  Register
-                </Link>
-              </div>
-            </form>
+                <div className="text-muted text-center">
+                  Don't have an Account?{" "}
+                  <Link className="text-decoration-none" href="/register">
+                    Register
+                  </Link>
+                </div>
+              </Form>
+            </Formik>
           </div>
         </div>
       </div>
