@@ -8,6 +8,6 @@ const userSchema = new Schema({
   role: String,
 });
 
-const Users = models(user) || model("user", userSchema);
+const Users = models.user || model("user", userSchema);
 
 export default Users;
