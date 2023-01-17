@@ -9,7 +9,7 @@ import { BsEnvelope } from "react-icons/bs";
 const ContactUs = () => {
   return (
     <>
-          <Head>
+      <Head>
         <title>Contact Us || Job Hunt - Bangladesh</title>
         <meta
           name="description"
