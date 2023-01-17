@@ -34,7 +34,7 @@ const AboutUs = () => {
           ligula ante, dictum non aliquet eu, dapibus ac quam. Morbi vel ante
           viverra orci tincidunt tempor eu id ipsum. Sed consectetur, risus a
           blandit tempor, velit magna pellentesque risus, at congue tellus dui
-          quis nisl.
+          quis nisl
         </p>
       </div>
       <div className="row">
