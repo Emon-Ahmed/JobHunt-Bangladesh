@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import Candidates from "./../../../db/candidates.json";
 const CandidatesList = () => {
@@ -29,7 +30,12 @@ const CandidatesList = () => {
                       />
                     </div>
                     <div className="col-md-6 col-lg-6 text-center text-md-start">
+                    <Link
+                        className="text-black text-decoration-none"
+                        href={`/candidates/${candidate.name}`}
+                      >
                       <h4 className="fw-bolder noSpace">{candidate.name}</h4>
+                      </Link>
                       <span className="fontSize14 secondary-text">
                         {candidate.designation}
                       </span>

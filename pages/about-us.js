@@ -6,13 +6,13 @@ import Footer from "../components/Frontend/Footer/Footer";
 import Breadcrumb from "../components/Utilities/Breadcrumb";
 import Link from "next/link";
 import Members from "../components/Utilities/Members";
+import { BsEnvelope } from "react-icons/bs";
 
 const AboutUs = () => {
-  return (    
-  <>
+  return (
+    <>
 
     </>
-   
   );
 };
 

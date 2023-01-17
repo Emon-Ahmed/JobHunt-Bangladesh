@@ -6,6 +6,7 @@ import Footer from "../../components/Frontend/Footer/Footer";
 import RecruitersDB from "./../../db/Recruiters.json";
 import { Rating } from "react-simple-star-rating";
 import PageBreadcrumb from "../../components/Utilities/PageBreadcrumb";
+import Link from "next/link";
 
 const Recruiters = () => {
   return (
@@ -56,9 +57,14 @@ const Recruiters = () => {
                       alt="Company"
                     />
                     <div className="d-flex flex-column align-items-center">
-                      <h4 className="pt-2 fw-bolder cursorPointer">
-                        {recruiter.name}
-                      </h4>
+                      <Link
+                        className="text-black text-decoration-none"
+                        href={`/recruiters/${recruiter.name}`}
+                      >
+                        <h4 className="pt-2 fw-bolder cursorPointer">
+                          {recruiter.name}
+                        </h4>
+                      </Link>
                       <div className="d-flex align-items-center">
                         <span className="fontSize12">
                           <Rating

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import JobsDB from "./../../../db/jobs.json";
 
@@ -41,7 +42,9 @@ const JobsList = () => {
           {JobsDB.map((jobList) => (
             <div key={jobList.id} className="col-xl-3 col-md-6 col-lg-4 g-2">
               <div className="px-2 py-4 m-2 rounded-4 border border-1 borderSecondary">
-                <h5>{jobList.name}</h5>
+                <Link className="text-black text-decoration-none" href={`/find-a-job/${jobList.name}`}>
+                  <h5>{jobList.name}</h5>
+                </Link>
                 <div className="d-flex py-2 justify-content-between">
                   <div className="d-flex align-items-center">
                     <img src="/media/img/briefcase.svg" alt="Jobs Type" />

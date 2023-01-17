@@ -5,6 +5,7 @@ import Newsletter from "../../components/Frontend/Home/Newsletter";
 import Footer from "../../components/Frontend/Footer/Footer";
 import FindForm from "../../components/Frontend/Header/FindForm";
 import JobsDB from "./../../db/jobs.json";
+import Link from "next/link";
 const FindAJob = () => {
   return (
     <>
@@ -76,7 +77,12 @@ const FindAJob = () => {
                       </div>
                     </div>
                   </div>
-                  <h6 className="fw-bolder cursorPointer">{jobList.name}</h6>
+                  <Link
+                    className="text-black text-decoration-none"
+                    href={`/find-a-job/${jobList.name}`}
+                  >
+                    <h6 className="fw-bolder cursorPointer">{jobList.name}</h6>
+                  </Link>
                   <div className="d-flex justify-content-between">
                     <div className="d-flex align-items-center">
                       <img src="/media/img/briefcase.svg" alt="Jobs Type" />
