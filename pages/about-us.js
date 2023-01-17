@@ -8,7 +8,8 @@ import Link from "next/link";
 import Members from "../components/Utilities/Members";
 
 const AboutUs = () => {
-  return (    <>
+  return (
+    <>
       <Head>
         <title>Contact Us || Job Hunt - Bangladesh</title>
         <meta
@@ -100,7 +101,6 @@ const AboutUs = () => {
       <Newsletter />
       <Footer />
     </>
-   
   );
 };
 
