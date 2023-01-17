@@ -15,6 +15,7 @@ import { useSession, signOut, getSession } from "next-auth/react";
 
 const Profile = () => {
   const { data: session } = useSession();
+  console.log(session.user.image);
   return (
     <div>
       <Head>
@@ -36,12 +37,8 @@ const Profile = () => {
         <div className="px-5">
           <img
             className="company_logo rounded-3"
-            src={
-              session?.user
-                ? session?.user?.image
-                : "https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/candidate-profile.png"
-            }
-            alt="Candidate Profile"
+            src={session?.user?.image}
+            alt="Profile"
           />
           <div className="d-flex justify-content-between align-items-start mt-2 mb-4 pb-1">
             <div className="pt-2 pb-1">

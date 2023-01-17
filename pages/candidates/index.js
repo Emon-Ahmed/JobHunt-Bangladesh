@@ -5,6 +5,7 @@ import Newsletter from "../../components/Frontend/Home/Newsletter";
 import Footer from "../../components/Frontend/Footer/Footer";
 import CandidateDB from "./../../db/candidates.json";
 import PageBreadcrumb from "../../components/Utilities/PageBreadcrumb";
+import Link from "next/link";
 
 const Candidate = () => {
   return (
@@ -58,9 +59,14 @@ const Candidate = () => {
                     />
                   </div>
                   <div className="col-md-6 col-lg-6 text-center text-md-start">
+                  <Link
+                        className="text-black text-decoration-none"
+                        href={`/candidates/${candidate.name}`}
+                      >
                     <h4 className="fw-bolder noSpace cursorPointer">
                       {candidate.name}
                     </h4>
+                    </Link>
                     <span className="fontSize14 secondary-text">
                       {candidate.designation}
                     </span>

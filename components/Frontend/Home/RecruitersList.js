@@ -2,6 +2,7 @@ import React from "react";
 import Recruiters from "./../../../db/Recruiters.json";
 import { Rating } from "react-simple-star-rating";
 import PageBreadcrumb from "../../Utilities/PageBreadcrumb";
+import Link from "next/link";
 
 const RecruitersList = () => {
   return (
@@ -26,9 +27,14 @@ const RecruitersList = () => {
                       alt="Company"
                     />
                     <div className="ms-2">
-                      <div className="fontSize17 fw-bolder">
-                        {recruiter.name}
-                      </div>
+                      <Link
+                        className="text-black text-decoration-none"
+                        href={`/recruiters/${recruiter.name}`}
+                      >
+                        <div className="fontSize17 fw-bolder">
+                          {recruiter.name}
+                        </div>
+                      </Link>
                       <div className="d-flex align-items-center">
                         <span className="fontSize12">
                           <Rating
