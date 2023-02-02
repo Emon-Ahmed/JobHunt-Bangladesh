@@ -15,7 +15,6 @@ import { useSession, signOut, getSession } from "next-auth/react";
 
 const Profile = () => {
   const { data: session } = useSession();
-  console.log(session.user.image);
   return (
     <div>
       <Head>
