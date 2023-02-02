@@ -4,7 +4,7 @@ import React from "react";
 import Footer from "../../components/Frontend/Footer/Footer";
 import NavBar from "../../components/Frontend/Header/NavBar";
 import Newsletter from "../../components/Frontend/Home/Newsletter";
-import { BsEye } from "react-icons/bs";
+import { BsEye, BsBagPlus, BsBagCheck } from "react-icons/bs";
 import {
   FaRegBuilding,
   FaShoppingBag,
@@ -102,6 +102,22 @@ const Profile = () => {
               </button>
               <button
                 className="nav-link px-5 my-2 text-start"
+                id="v-pills-post-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#v-pills-post"
+                type="button"
+                role="tab"
+                aria-controls="v-pills-post"
+                aria-selected="false"
+              >
+                {" "}
+                <span className="pe-2">
+                  <BsBagPlus />{" "}
+                </span>
+                Post A Jobs
+              </button>
+              <button
+                className="nav-link px-5 my-2 text-start"
                 id="v-pills-profile-tab"
                 data-bs-toggle="pill"
                 data-bs-target="#v-pills-profile"
@@ -112,7 +128,7 @@ const Profile = () => {
               >
                 {" "}
                 <span className="pe-2">
-                  <FaShoppingBag />{" "}
+                  <BsBagCheck />{" "}
                 </span>
                 Applied Jobs
               </button>
@@ -166,6 +182,15 @@ const Profile = () => {
                 <h3 className="text-black fw-bolder">My Account</h3>
                 <p className="text-black-50 py-1">Update your profile</p>
                 <p className="text-black-50 py-1">{session?.user?.email}</p>
+              </div>
+              <div
+                className="tab-pane fade"
+                id="v-pills-post"
+                role="tabpanel"
+                aria-labelledby="v-pills-post-tab"
+                tabindex="0"
+              >
+                <h3 className="text-black fw-bolder">Post A Jobs</h3>
               </div>
               <div
                 className="tab-pane fade"
