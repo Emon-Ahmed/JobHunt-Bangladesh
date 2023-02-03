@@ -86,7 +86,7 @@ const Register = () => {
                   headers: { "Content-Type": "application/json" },
                   body: JSON.stringify(values),
                 };
-                await fetch(`${process.env.BASE_URL}api/auth/signup`, options)
+                await fetch(`${process.env.BASE_URL}/api/auth/signup`, options)
                   .then((res) => res.json())
                   .then((data) => {
                     if (data) router.push(`${process.env.BASE_URL}`);
