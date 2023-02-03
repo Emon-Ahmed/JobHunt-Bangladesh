@@ -5,13 +5,13 @@ import Footer from "../../components/Frontend/Footer/Footer";
 import NavBar from "../../components/Frontend/Header/NavBar";
 import Newsletter from "../../components/Frontend/Home/Newsletter";
 import { BsEye, BsBagPlus, BsBagCheck } from "react-icons/bs";
-import {
-  FaRegBuilding,
-  FaShoppingBag,
-  FaRegUser,
-  FaRegSun,
-} from "react-icons/fa";
+import { FaRegBuilding, FaRegUser, FaRegSun } from "react-icons/fa";
 import { useSession, signOut, getSession } from "next-auth/react";
+import MyProfile from "../../components/Backend/Profile/MyProfile";
+import PostAJob from "../../components/Backend/Profile/PostAJob";
+import AppliedJobs from "../../components/Backend/Profile/AppliedJobs";
+import MyJobs from "../../components/Backend/Profile/MyJobs";
+import Setting from "../../components/Backend/Profile/Setting";
 
 const Profile = () => {
   const { data: session } = useSession();
@@ -177,47 +177,55 @@ const Profile = () => {
                 id="v-pills-home"
                 role="tabpanel"
                 aria-labelledby="v-pills-home-tab"
-                tabindex="0"
+                tabIndex="0"
               >
-                <h3 className="text-black fw-bolder">My Account</h3>
-                <p className="text-black-50 py-1">Update your profile</p>
-                <p className="text-black-50 py-1">{session?.user?.email}</p>
+                <div>
+                  <MyProfile />
+                </div>
               </div>
               <div
                 className="tab-pane fade"
                 id="v-pills-post"
                 role="tabpanel"
                 aria-labelledby="v-pills-post-tab"
-                tabindex="0"
+                tabIndex="0"
               >
-                <h3 className="text-black fw-bolder">Post A Jobs</h3>
+                <div>
+                  <PostAJob />
+                </div>
               </div>
               <div
                 className="tab-pane fade"
                 id="v-pills-profile"
                 role="tabpanel"
                 aria-labelledby="v-pills-profile-tab"
-                tabindex="0"
+                tabIndex="0"
               >
-                <h3 className="text-black fw-bolder">Applied Jobs</h3>
+                <div>
+                  <AppliedJobs />
+                </div>
               </div>
               <div
                 className="tab-pane fade"
                 id="v-pills-messages"
                 role="tabpanel"
                 aria-labelledby="v-pills-messages-tab"
-                tabindex="0"
+                tabIndex="0"
               >
-                <h3 className="text-black fw-bolder">My Jobs</h3>
+                <div>
+                  <MyJobs />
+                </div>
               </div>
               <div
                 className="tab-pane fade"
                 id="v-pills-settings"
                 role="tabpanel"
                 aria-labelledby="v-pills-settings-tab"
-                tabindex="0"
+                tabIndex="0"
               >
-                <h3 className="text-black fw-bolder">Setting</h3>
+                <div>
+                  <Setting />
+                </div>
               </div>
             </div>
           </div>
