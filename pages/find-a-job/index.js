@@ -56,7 +56,7 @@ const FindAJob = () => {
             {JobsDB.map((jobList) => (
               <div key={jobList.id} className="col-xl-3 col-md-6 col-lg-4 g-2 ">
                 <div className="p-4 m-2 recruiters-box rounded-4 hover-white  border border-1 borderSecondary">
-                  <div className="d-flex pt-2 pb-4 align-items-center">
+                  {/* <div className="d-flex pt-2 pb-4 align-items-center">
                     <img
                       className="img48 rounded-2"
                       src="/media/img/JobHunt-Company.png"
@@ -76,12 +76,12 @@ const FindAJob = () => {
                         </span>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                   <Link
                     className="text-black text-decoration-none"
                     href={`/find-a-job/${jobList.name}`}
                   >
-                    <h6 className="fw-bolder cursorPointer">{jobList.name}</h6>
+                    <h5 className="fw-bolder cursorPointer mb-3">{jobList.name}</h5>
                   </Link>
                   <div className="d-flex justify-content-between">
                     <div className="d-flex align-items-center">
