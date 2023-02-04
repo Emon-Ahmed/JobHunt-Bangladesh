@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useSession, signOut } from "next-auth/react";
+import { BsPersonCircle } from "react-icons/bs";
 
 function NavBar() {
   const { data: session } = useSession();
@@ -77,14 +78,37 @@ function NavBar() {
               </div>
             ) : (
               <div className="d-flex register-btn">
-                <Link href="/sign-in">
+                <div class="dropdown">
                   <button
-                    onClick={() => signOut()}
-                    className="btn bg-danger text-white px-4 py-2"
+                    class="btn fs-5 dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
                   >
-                    <spam className="nav-link text-white">Logout</spam>
+                    <BsPersonCircle />
                   </button>
-                </Link>
+                  <ul class="dropdown-menu">
+                    <li className="text-decoration-none">
+                      <Link href="/profile">
+                        <button class="dropdown-item " type="button">
+                          Profile
+                        </button>
+                      </Link>
+                    </li>
+                    <li>
+                      <button class="dropdown-item" type="button">
+                        <Link href="/sign-in">
+                          <button
+                            onClick={() => signOut()}
+                            className="btn bg-danger text-white px-3 py-1"
+                          >
+                            <spam className="nav-link text-white">Logout</spam>
+                          </button>
+                        </Link>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
               </div>
             )}
           </div>
