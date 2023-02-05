@@ -114,7 +114,7 @@ const Profile = () => {
                 <span className="pe-2">
                   <BsBagPlus />{" "}
                 </span>
-                Post A Jobs
+                Post A Job
               </button>
               <button
                 className="nav-link px-5 my-2 text-start"

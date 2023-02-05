@@ -446,7 +446,7 @@ Contact Us
   border: none !important;
 }
 .editor-height {
-  height: 260px;
+  height: 220px;
 }
 .file-btn::file-selector-button {
   border: none;
@@ -455,8 +455,7 @@ Contact Us
   padding: 5px 5px;
   height: auto;
   padding: 0em 1.6em;
-  border-radius: 0.2em;
+  border-radius: 0.5em;
   cursor: pointer;
-  margin-left: 10px;
   margin-right: 10px;
 }
