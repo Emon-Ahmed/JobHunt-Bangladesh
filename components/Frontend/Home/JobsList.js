@@ -21,9 +21,9 @@ const JobsList = () => {
           />
           <span className="fontSize13 fw-bold">All</span>
         </div>
-        {limitJobsList.map((job) => (
+        {limitJobsList.map((job,index) => (
           <div
-            key={job.id}
+            key={index++}
             className="jobsTab border border-1 borderSecondary m-2 px-2 py-1 d-inline-flex align-items-center"
           >
             <img

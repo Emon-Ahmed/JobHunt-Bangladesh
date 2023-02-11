@@ -4,7 +4,7 @@ import React from "react";
 import Footer from "../../components/Frontend/Footer/Footer";
 import NavBar from "../../components/Frontend/Header/NavBar";
 import Newsletter from "../../components/Frontend/Home/Newsletter";
-import { BsEye, BsBagPlus, BsBagCheck } from "react-icons/bs";
+import { BsEye, BsBagPlus, BsBagCheck, BsBuilding } from "react-icons/bs";
 import { FaRegBuilding, FaRegUser, FaRegSun } from "react-icons/fa";
 import { useSession, signOut, getSession } from "next-auth/react";
 import MyProfile from "../../components/Backend/Profile/MyProfile";
@@ -12,6 +12,7 @@ import PostAJob from "../../components/Backend/Profile/PostAJob";
 import AppliedJobs from "../../components/Backend/Profile/AppliedJobs";
 import MyJobs from "../../components/Backend/Profile/MyJobs";
 import Setting from "../../components/Backend/Profile/Setting";
+import Company from "../../components/Backend/Profile/Company";
 
 const Profile = () => {
   const { data: session } = useSession();
@@ -150,6 +151,22 @@ const Profile = () => {
               </button>
               <button
                 className="nav-link px-5 my-2 text-start"
+                id="v-pills-messages-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#v-pills-Company"
+                type="button"
+                role="tab"
+                aria-controls="v-pills-Company"
+                aria-selected="false"
+              >
+                {" "}
+                <span className="pe-2">
+                  <BsBuilding />
+                </span>{" "}
+                My Company
+              </button>
+              <button
+                className="nav-link px-5 my-2 text-start"
                 id="v-pills-settings-tab"
                 data-bs-toggle="pill"
                 data-bs-target="#v-pills-settings"
@@ -214,6 +231,17 @@ const Profile = () => {
               >
                 <div>
                   <MyJobs />
+                </div>
+              </div>
+              <div
+                className="tab-pane fade"
+                id="v-pills-Company"
+                role="tabpanel"
+                aria-labelledby="v-pills-Company-tab"
+                tabIndex="0"
+              >
+                <div>
+                  <Company />
                 </div>
               </div>
               <div
