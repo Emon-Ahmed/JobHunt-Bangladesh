@@ -1,6 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useMemo  } from "react";
 import dynamic from "next/dynamic";
-const ReactQuill = dynamic(import("react-quill"), { ssr: false });
+// const ReactQuill = dynamic(import("react-quill"), { ssr: false });
 import "react-quill/dist/quill.snow.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useRouter } from "next/router";
@@ -8,6 +8,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const PostAJob = () => {
+  const ReactQuill = useMemo(() => dynamic(() => import('react-quill'), { ssr: false }),[]);
+
   const [value, setValue] = useState("");
   // console.log(value);
   const inputRef = useRef(null);
