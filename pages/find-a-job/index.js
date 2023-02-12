@@ -1,12 +1,31 @@
 import Head from "next/head";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../../components/Frontend/Header/NavBar";
 import Newsletter from "../../components/Frontend/Home/Newsletter";
 import Footer from "../../components/Frontend/Footer/Footer";
 import FindForm from "../../components/Frontend/Header/FindForm";
-import JobsDB from "./../../db/jobs.json";
+// import JobsDB from "./../../db/jobs.json";
 import Link from "next/link";
+import axios from 'axios';
+
 const FindAJob = () => {
+  const [data, setData] = useState(null)
+  const [isLoading, setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    fetch('/api/job')
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setData(data)
+        setLoading(false)
+      })
+  }, [])
+
+  if (isLoading) return <p>Loading...</p>
+  if (!data) return <p>No profile data</p>
+  
   return (
     <>
       <Head>
@@ -38,7 +57,7 @@ const FindAJob = () => {
         </div>
         <div className="mt-4 d-flex justify-content-between align-items-center">
           <span className="fontSize14">
-            Showing <b>4-6</b> of <b>{JobsDB?.length}</b> jobs
+            Showing <b>4-6</b> of <b>{data?.length}</b> jobs
           </span>
           <div className="px-2 border border-1 rounded rounded-1 d-flex justify-content-between align-items-center w-auto">
             <span className="px-1 fontSize14">Sort: </span>
@@ -53,10 +72,10 @@ const FindAJob = () => {
         <hr />
         <div className="py-3">
           <div className="row">
-            {JobsDB.map((jobList) => (
-              <div key={jobList.id} className="col-xl-3 col-md-6 col-lg-4 g-2 ">
+            {data?.map((jobList) => (
+              <div key={jobList?._id} className="col-xl-3 col-md-6 col-lg-4 g-2 ">
                 <div className="p-4 m-2 recruiters-box rounded-4 hover-white  border border-1 borderSecondary">
-                  {/* <div className="d-flex pt-2 pb-4 align-items-center">
+                  <div className="d-flex pt-2 pb-4 align-items-center">
                     <img
                       className="img48 rounded-2"
                       src="/media/img/JobHunt-Company.png"
@@ -64,7 +83,7 @@ const FindAJob = () => {
                     />
                     <div className="ms-2">
                       <h6 className="fw-bolder cursorPointer">
-                        {jobList.company_name}
+                        {jobList?.company_name}
                       </h6>
                       <div className="d-flex align-items-center">
                         <img
@@ -72,22 +91,22 @@ const FindAJob = () => {
                           alt="Jobs Location"
                         />
                         <span className="fontSize11 ps-1">
-                          {jobList.company_address}
+                          {jobList?.company_address}
                         </span>
                       </div>
                     </div>
-                  </div> */}
+                  </div>
                   <Link
                     className="text-black text-decoration-none"
-                    href={`/find-a-job/${jobList.name}`}
+                    href={`/find-a-job/${jobList?.job_title}`}
                   >
-                    <h5 className="fw-bolder cursorPointer mb-3">{jobList.name}</h5>
+                    <h5 className="fw-bolder cursorPointer mb-3">{jobList?.job_title}</h5>
                   </Link>
                   <div className="d-flex justify-content-between">
                     <div className="d-flex align-items-center">
                       <img src="/media/img/briefcase.svg" alt="Jobs Type" />
                       <span className="fontSize12 secondary-text ps-1">
-                        Remote
+                        {jobList?.job_type}
                       </span>
                     </div>
                     <div className="d-flex align-items-center">
@@ -97,11 +116,11 @@ const FindAJob = () => {
                       </span>
                     </div>
                   </div>
-                  <p className="fontSize14 text-dark py-1">
+                  {/* <p className="fontSize14 text-dark py-1">
                     {jobList.description}
-                  </p>
+                  </p> */}
                   <div className="my-2">
-                    {jobList.employment_info[7].skills.map((s) => (
+                    {jobList?.employment_info?.skills?.map((s) => (
                       <span className="me-2 mb-2 btn btn-secondary-color rounded fontSize12">
                         {s?.skill}
                       </span>

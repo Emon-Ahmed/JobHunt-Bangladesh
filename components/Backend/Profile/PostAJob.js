@@ -9,7 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const PostAJob = () => {
   const [value, setValue] = useState("");
-  console.log(value);
+  // console.log(value);
   const inputRef = useRef(null);
   const router = useRouter();
   const [file, setFile] = useState(
@@ -31,31 +31,31 @@ const PostAJob = () => {
       <div>
         <Formik
           initialValues={{
-            description: value,
-            industry: "",
-            job_level: "",
-            Salary: "",
-            Experience: "",
-            job_type: "",
-            Location: "",
-            file: file,
-            company: "",
-            startDate: startDate,
             job_title: "",
+            industry: "graphics",
+            job_level: "beginner",
+            Salary: "$200 - $400",
+            Experience: "Fresher",
+            job_type: "Full Time",
+            Location: "Dhaka",
+            company: "adobe",
+            file: file,
+            startDate: startDate,
           }}
-          onSubmit={async (values) => {
-            console.log(values);
+          onSubmit={async (values, { resetForm }) => {
+            console.log({ ...values, description: value });
             const options = {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(values),
+              body: JSON.stringify({ ...values, description: value }),
             };
-
             await fetch(`${process.env.BASE_URL}/api/job`, options)
               .then((res) => res.json())
               .then((data) => {
                 console.log(data);
                 // if (data) router.push(`${process.env.BASE_URL}`);
+                resetForm();
+                setValue("")
               });
           }}
         >
@@ -81,7 +81,7 @@ const PostAJob = () => {
                       <ErrorMessage name="job_title" />
                     </div>
                   </div>
-                  <div className="form-group my-2">
+                  <div className="form-group my-3">
                     <label className="form-label text-black-50 fontSize14">
                       Description
                     </label>
@@ -93,6 +93,7 @@ const PostAJob = () => {
                       name="description"
                       value={value}
                       onChange={setValue}
+                      placeholder={'Write your post here...'}
                     />
 
                     <div className="fontSize14 pt-1 text-center text-danger">
@@ -101,7 +102,7 @@ const PostAJob = () => {
                   </div>
                   <div className="row">
                     <div className="col-lg-6">
-                      <div className="form-group my-3 w-100">
+                      <div className="form-group mt-5 w-100">
                         <label className="form-label text-black-50 fontSize14">
                           Industry
                         </label>
@@ -116,7 +117,7 @@ const PostAJob = () => {
                       </div>
                     </div>
                     <div className="col-lg-6">
-                      <div className="form-group my-3">
+                      <div className="form-group mt-5">
                         <label className="form-label text-black-50 fontSize14">
                           Job Level
                         </label>
@@ -159,6 +160,7 @@ const PostAJob = () => {
                           className="form-select form-select-lg no-outline"
                           as="select"
                           name="Experience"
+                          defaultValue="Fresher"
                         >
                           <option value="Fresher">Fresher</option>
                           <option value="1 - 2 years">1 - 2 years</option>
