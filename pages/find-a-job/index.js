@@ -4,9 +4,7 @@ import NavBar from "../../components/Frontend/Header/NavBar";
 import Newsletter from "../../components/Frontend/Home/Newsletter";
 import Footer from "../../components/Frontend/Footer/Footer";
 import FindForm from "../../components/Frontend/Header/FindForm";
-// import JobsDB from "./../../db/jobs.json";
 import Link from "next/link";
-import axios from 'axios';
 
 const FindAJob = () => {
   const [data, setData] = useState(null)

@@ -201,7 +201,7 @@ const Profile = () => {
                 </div>
               </div>
               <div
-                className="tab-pane fade"
+                className="tab-pane fade no-outline"
                 id="v-pills-post"
                 role="tabpanel"
                 aria-labelledby="v-pills-post-tab"

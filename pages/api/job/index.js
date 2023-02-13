@@ -39,7 +39,8 @@ export default async function handler(req, res) {
       break;
     case "DELETE":
       try {
-        const deletedUser = await JobModel.deleteOne({ _id: req.query.id });
+        console.log(req.query.id);
+        const deletedUser = await JobModel.findByIdAndRemove({ _id: req.query.id });
         if (!deletedUser) {
           return res.status(400).json({ success: false });
         }
