@@ -26,11 +26,18 @@ const MyJobs = () => {
   if (!data) return <p>No profile data</p>;
 
   async function handleDelete(_id) {
-    await fetch(`/api/job/delete/${_id}`, {
+    await fetch(`/api/job/${_id}`, {
       method: "DELETE",
-    }).then(() => {
-      alert("Delete");
-    });
+    })
+      .then((res) => res.json())
+      .then((d) => {
+        if (d != null) {
+          console.log("Deleted");
+          alert("Delete Order");
+          const remaining = data.filter((row) => row._id !== _id);
+          setData(remaining);
+        }
+      });
   }
 
   return (

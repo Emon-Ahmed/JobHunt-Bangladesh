@@ -1,6 +1,7 @@
 import { Schema, model, models } from "mongoose";
 
-const JobSchema = new Schema({
+const JobSchema = new Schema(
+  {
     job_title: String,
     description: String,
     industry: String,
@@ -13,7 +14,11 @@ const JobSchema = new Schema({
     company: String,
     startDate: String,
     description: String,
-});
+  },
+  {
+    timestamps: true,
+  }
+);
 
 const Jobs = models.job || model("job", JobSchema);
 
