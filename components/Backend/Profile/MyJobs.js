@@ -11,7 +11,6 @@ const MyJobs = () => {
     fetch("/api/job")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setData(data);
         setLoading(false);
       });
@@ -32,7 +31,6 @@ const MyJobs = () => {
       .then((res) => res.json())
       .then((d) => {
         if (d != null) {
-          console.log("Deleted");
           alert("Delete Order");
           const remaining = data.filter((row) => row._id !== _id);
           setData(remaining);

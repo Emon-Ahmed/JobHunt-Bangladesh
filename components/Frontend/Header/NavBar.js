@@ -6,7 +6,6 @@ import { BsPersonCircle } from "react-icons/bs";
 
 function NavBar() {
   const { data: session } = useSession();
-  console.log(session);
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light py-4">

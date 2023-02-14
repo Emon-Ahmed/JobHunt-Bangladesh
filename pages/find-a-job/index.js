@@ -15,7 +15,6 @@ const FindAJob = () => {
     fetch('/api/job')
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setData(data)
         setLoading(false)
       })

@@ -55,7 +55,6 @@ const SingIn = () => {
                 password: "",
               }}
               onSubmit={async (values) => {
-                // console.log(values);
                 const status = await signIn("credentials", {
                   redirect: false,
                   email: values.email,

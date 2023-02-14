@@ -1,4 +1,3 @@
-// pages/api/items/[id].js
 import connection from "../../../database/connection";
 import JobModel from "../../../model/JobSchema";
 
@@ -12,7 +11,6 @@ export default async function deleteItem(req, res) {
     case "DELETE":
       try {
         const deletedItem = await JobModel.findByIdAndDelete(id);
-        console.log(deletedItem);
         res.status(200).json("Deleted", deletedItem);
       } catch (error) {
         console.error(error);
