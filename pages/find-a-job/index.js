@@ -95,7 +95,7 @@ const FindAJob = () => {
                   </div>
                   <Link
                     className="text-black text-decoration-none"
-                    href={`/find-a-job/${jobList?.job_title}`}
+                    href={`/find-a-job/${jobList?._id}`}
                   >
                     <h5 className="fw-bolder cursorPointer mb-3">{jobList?.job_title}</h5>
                   </Link>

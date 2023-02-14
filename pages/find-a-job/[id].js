@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../../components/Frontend/Footer/Footer";
 import NavBar from "../../components/Frontend/Header/NavBar";
 import Newsletter from "../../components/Frontend/Home/Newsletter";
@@ -14,10 +14,27 @@ import {
   BsStopwatch,
   BsFillPinMapFill,
 } from "react-icons/bs";
+import { useRouter } from "next/router";
 
 import { GoVerified } from "react-icons/go";
 
 const JobDetails = () => {
+  const [dt, setData] = useState(null);
+  const [isLoading, setLoading] = useState(false);
+  const router = useRouter();
+  const { id } = router.query;
+  useEffect(() => {
+    setLoading(true);
+    fetch(`/api/job/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
+  console.log(id);
+  if (isLoading) return <p>Loading...</p>;
+  if (!dt) return <p>No profile data</p>;
   return (
     <>
       <Head>
@@ -31,15 +48,10 @@ const JobDetails = () => {
 
       <NavBar />
       <div className="container">
-        <img
-          className="w-100 rounded-4"
-          src="https://jobbox-nextjs.vercel.app/assets/imgs/page/job-single/thumb.png"
-        />
+        <img className="w-100 rounded-4" src={dt?.file} />
         <div className="row justify-content-between align-items-start my-4 py-3">
           <div className="col-lg-9">
-            <h2 className="fw-bolder">
-              Senior Full Stack Engineer, Creator Success
-            </h2>
+            <h2 className="fw-bolder">{dt?.job_title}</h2>
             <div className="d-flex justify-content-start">
               <div className="d-flex align-items-center">
                 <img src="/media/img/briefcase.svg" alt="Jobs Type" />
@@ -228,41 +240,10 @@ const JobDetails = () => {
               </div>
             </div>
           </div>
-          <div className="job_details py-4 secondary-text">
-            <h3 className="fw-bolder">Welcome to AliStudio Team</h3>
-            <p>
-              The AliStudio Design team has a vision to establish a trusted
-              platform that enables productive and healthy enterprises in a
-              world of digital and remote everything, constantly changing work
-              patterns and norms, and the need for organizational resiliency.
-            </p>
-            <p>
-              The ideal candidate will have strong creative skills and a
-              portfolio of work which demonstrates their passion for
-              illustrative design and typography. This candidate will have
-              experiences in working with numerous different design platforms
-              such as digital and print forms.
-            </p>
-            <h3 className="fw-bolder">
-              Essential Knowledge, Skills, and Experience
-            </h3>
-            <ul>
-              <li className="py-1">
-                A portfolio demonstrating well thought through and polished end
-                to end customer journeys
-              </li>
-              <li className="py-1">
-                5+ years of industry experience in interactive design and / or
-                visual design
-              </li>
-              <li className="py-1">Excellent interpersonal skills</li>
-            </ul>
-            <h3 className="fw-bolder">Product Designer</h3>
-            <p>
-              Product knowledge: Deeply understand the technology and features
-              of the product area to which you are assigned.
-            </p>
-          </div>
+          <div
+            dangerouslySetInnerHTML={{ __html: dt?.description }}
+            className="job_details py-4 secondary-text"
+          ></div>
         </div>
       </div>
       <Newsletter />

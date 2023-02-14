@@ -8,6 +8,14 @@ export default async function deleteItem(req, res) {
   await connection();
 
   switch (method) {
+    case "GET":
+      try {
+        const users = await JobModel.findOne({_id: id});
+        res.status(200).json(users);
+      } catch (error) {
+        res.status(400).json({ success: false });
+      }
+      break;
     case "DELETE":
       try {
         const deletedItem = await JobModel.findByIdAndDelete(id);
