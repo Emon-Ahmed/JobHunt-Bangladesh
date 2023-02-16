@@ -13,6 +13,7 @@ import AppliedJobs from "../../components/Backend/Profile/AppliedJobs";
 import MyJobs from "../../components/Backend/Profile/MyJobs";
 import Setting from "../../components/Backend/Profile/Setting";
 import Company from "../../components/Backend/Profile/Company";
+import AddCompany from "../../components/Backend/Profile/AddCompany";
 
 const Profile = () => {
   const { data: session } = useSession();
@@ -149,6 +150,7 @@ const Profile = () => {
                 </span>{" "}
                 My Jobs
               </button>
+
               <button
                 className="nav-link px-5 my-2 text-start"
                 id="v-pills-messages-tab"
@@ -164,6 +166,22 @@ const Profile = () => {
                   <BsBuilding />
                 </span>{" "}
                 My Company
+              </button>
+              <button
+                className="nav-link px-5 my-2 text-start"
+                id="v-pills-messages-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#v-pills-New-Company"
+                type="button"
+                role="tab"
+                aria-controls="v-pills-New-Company"
+                aria-selected="false"
+              >
+                {" "}
+                <span className="pe-2">
+                  <BsBuilding />
+                </span>{" "}
+                New Company
               </button>
               <button
                 className="nav-link px-5 my-2 text-start"
@@ -242,6 +260,17 @@ const Profile = () => {
               >
                 <div>
                   <Company />
+                </div>
+              </div>
+              <div
+                className="tab-pane fade"
+                id="v-pills-New-Company"
+                role="tabpanel"
+                aria-labelledby="v-pills-New-Company-tab"
+                tabIndex="0"
+              >
+                <div>
+                  <AddCompany />
                 </div>
               </div>
               <div
