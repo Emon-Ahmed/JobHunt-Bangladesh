@@ -9,30 +9,48 @@ const AddCompany = () => {
     () => dynamic(() => import("react-quill"), { ssr: false }),
     []
   );
-  const inputRef = useRef(null);
-  const [value, setValue] = useState("");
-  const [file, setFile] = useState("https://via.placeholder.com/1325x355");
-  function handleChange(e) {
-    setFile(URL.createObjectURL(e.target.files[0]));
+  const coverRef = useRef(null);
+  const iconRef = useRef(null);
+
+  const [quillText, setQuillText] = useState("");
+  const [coverImage, setCoverImage] = useState(
+    "https://via.placeholder.com/1325x355"
+  );
+  const [iconImage, setIconImage] = useState(
+    "https://via.placeholder.com/164x164"
+  );
+
+  function handleCoverChange(e) {
+    setCoverImage(URL.createObjectURL(e.target.files[0]));
   }
-  const resetFileInput = () => {
-    inputRef.current.value = null;
-    setFile("https://via.placeholder.com/1325x355");
+  function handleIconChange(e) {
+    setIconImage(URL.createObjectURL(e.target.files[0]));
+  }
+
+  const resetCoverInput = () => {
+    coverRef.current.value = null;
+    setCoverImage("https://via.placeholder.com/1325x355");
   };
+  const resetIconInput = () => {
+    iconRef.current.value = null;
+    setIconImage("https://via.placeholder.com/164x164");
+  };
+
   return (
     <div>
       <h3 className="text-black fw-bolder">New Company</h3>
       <Formik
         initialValues={{
-          job_title: "",
-          industry: "graphics",
-          job_level: "beginner",
-          Salary: "$200 - $400",
-          Experience: "Fresher",
-          job_type: "Full Time",
-          Location: "Dhaka",
-          company: "adobe",
-          file: file,
+          company_name: "",
+          company_tagline: "",
+          company_description: "",
+          company_location: "Dhaka",
+          company_age: "1 Year",
+          company_size: "0-10",
+          company_industry: "Graphics",
+          company_email: "example@gmail.com",
+          company_phone: "+880 --- --- ----",
+          company_rating: 5,
         }}
         onSubmit={async (values, { resetForm }) => {
           const options = {
@@ -40,14 +58,19 @@ const AddCompany = () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               ...values,
-              description: value,
+              company_description: quillText,
+              company_icon: iconImage,
+              company_cover: coverImage,
             }),
           };
           await fetch(`${process.env.BASE_URL}/api/company`, options)
             .then((res) => res.json())
             .then((data) => {
+              console.log(data);
               resetForm();
-              setValue("");
+              setQuillText("");
+              setCoverImage("https://via.placeholder.com/1325x355");
+              setIconImage("https://via.placeholder.com/164x164");
             });
         }}
       >
@@ -55,17 +78,25 @@ const AddCompany = () => {
           <div className="row">
             <div className="col-lg-8">
               <div className="form-group my-2">
-                <label
-                  className="form-label text-black-50 fontSize14"
-                  htmlFor="input-1"
-                >
+                <label className="form-label text-black-50 fontSize14">
                   Company Name
                 </label>
                 <Field
                   className="no-outline"
                   type="text"
-                  name="job_title"
-                  placeholder="Title"
+                  name="company_name"
+                  placeholder="Name"
+                />
+              </div>
+              <div className="form-group my-2">
+                <label className="form-label text-black-50 fontSize14">
+                  Company Tagline
+                </label>
+                <Field
+                  className="no-outline"
+                  type="text"
+                  name="company_tagline"
+                  placeholder="Tagline"
                 />
               </div>
               <div className="form-group my-3">
@@ -75,8 +106,8 @@ const AddCompany = () => {
                 <ReactQuill
                   className="no-outline editor-height text-black"
                   theme="snow"
-                  value={value}
-                  onChange={setValue}
+                  value={quillText}
+                  onChange={setQuillText}
                   placeholder={"Write your post here..."}
                 />
               </div>
@@ -84,15 +115,16 @@ const AddCompany = () => {
                 <div className="col-lg-6">
                   <div className="form-group mt-5 w-100">
                     <label className="form-label text-black-50 fontSize14">
-                      Industry
+                      Company Industry
                     </label>
                     <Field
                       className="form-select form-select-lg no-outline"
                       as="select"
-                      name="industry"
+                      name="company_industry"
                     >
-                      <option value="graphics">Graphics</option>
-                      <option value="developer">Developer</option>
+                      <option value="Graphics">Graphics</option>
+                      <option value="Developer">Developer</option>
+                      <option value="Marketing">Marketing</option>
                     </Field>
                   </div>
                 </div>
@@ -134,12 +166,12 @@ const AddCompany = () => {
                 <div className="col-lg-6">
                   <div className="form-group my-3">
                     <label className="form-label text-black-50 fontSize14">
-                      Location
+                      Company Location
                     </label>
                     <Field
                       className="form-select form-select-lg no-outline"
                       as="select"
-                      name="Location"
+                      name="company_location"
                     >
                       <option value="Dhaka">Dhaka</option>
                       <option value="Khulna">Khulna</option>
@@ -156,32 +188,26 @@ const AddCompany = () => {
               <div className="row">
                 <div className="col-lg-6">
                   <div className="form-group my-3">
-                    <label
-                      className="form-label text-black-50 fontSize14"
-                      htmlFor="input-1"
-                    >
+                    <label className="form-label text-black-50 fontSize14">
                       Company Email
                     </label>
                     <Field
                       className="no-outline"
                       type="text"
-                      name="job_title"
+                      name="company_email"
                       placeholder="Email Address"
                     />
                   </div>
                 </div>
                 <div className="col-lg-6">
                   <div className="form-group my-3">
-                    <label
-                      className="form-label text-black-50 fontSize14"
-                      htmlFor="input-1"
-                    >
+                    <label className="form-label text-black-50 fontSize14">
                       Company Phone
                     </label>
                     <Field
                       className="no-outline"
                       type="text"
-                      name="job_title"
+                      name="company_phone"
                       placeholder="Phone Number"
                     />
                   </div>
@@ -199,59 +225,53 @@ const AddCompany = () => {
             </div>
             <div className="col-lg-4">
               <div>
-                <label
-                  className="form-label text-black-50 fontSize14"
-                  htmlFor="input-1"
-                >
+                <label className="form-label text-black-50 fontSize14">
                   Company Logo
                 </label>
                 <div className="my-2">
-                  <label className="text-black-50 fontSize14" htmlFor="input-1">
+                  <label className="text-black-50 fontSize14">
                     <img
-                      className="rounded-circle img168 me-2"
-                      src={file}
-                      alt="File"
+                      className="rounded-circle img168 me-2 w-50"
+                      src={iconImage}
+                      alt="Company Icon Image"
                     />
                   </label>
                   <div className="mt-3">
                     <input
                       className="no-outline border-0 file-btn"
                       type="file"
-                      onChange={handleChange}
-                      ref={inputRef}
+                      onChange={handleIconChange}
+                      ref={iconRef}
                     />
                   </div>
                 </div>
-                <span onClick={resetFileInput} className="text-danger">
+                <span onClick={resetIconInput} className="text-danger">
                   Delete
                 </span>
               </div>
               <hr />
               <div>
-                <label
-                  className="form-label text-black-50 fontSize14"
-                  htmlFor="input-1"
-                >
+                <label className="form-label text-black-50 fontSize14">
                   Company Cover
                 </label>
                 <div className="my-2">
-                  <label className="text-black-50 fontSize14" htmlFor="input-1">
+                  <label className="text-black-50 fontSize14">
                     <img
                       className="rounded-3 img168 me-2 img-fluid"
-                      src={file}
-                      alt="File"
+                      src={coverImage}
+                      alt="Company Cover Image"
                     />
                   </label>
                   <div className="mt-3">
                     <input
                       className="no-outline border-0 file-btn"
                       type="file"
-                      onChange={handleChange}
-                      ref={inputRef}
+                      onChange={handleCoverChange}
+                      ref={coverRef}
                     />
                   </div>
                 </div>
-                <span onClick={resetFileInput} className="text-danger">
+                <span onClick={resetCoverInput} className="text-danger">
                   Delete
                 </span>
               </div>

@@ -11,7 +11,9 @@ const CompanySchema = new Schema(
     company_cover: String,
     company_age: String,
     company_size: String,
-    company_meta_data: String,
+    company_email: String,
+    company_phone: String,
+    company_rating: String,
   },
   {
     timestamps: true,
