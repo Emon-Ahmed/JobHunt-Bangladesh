@@ -22,6 +22,9 @@ const JobDetails = () => {
   const [dt, setData] = useState(null);
   const [isLoading, setLoading] = useState(false);
   const router = useRouter();
+  const handleApplied = () => {
+    
+  }
   const { id } = router.query;
   useEffect(() => {
     setLoading(true);
@@ -33,7 +36,12 @@ const JobDetails = () => {
       });
   }, []);
   console.log(id);
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading)
+    return (
+      <div className="m-5 text-center text-black">
+        <h4>Loading...</h4>
+      </div>
+    );
   if (!dt) return <p>No profile data</p>;
   return (
     <>
@@ -69,7 +77,7 @@ const JobDetails = () => {
           </div>
           <div className="col-lg-3 text-md-right text-center py-3 py-lg-0">
             <button className="btn bg-primary-color text-white w-100 px-4 py-3">
-              <Link className="nav-link text-white" href="/sign-in">
+              <Link className="nav-link text-white" href="/sign-in" onClick={handleApplied}>
                 <span className="pe-2">
                   <GoVerified />{" "}
                 </span>{" "}

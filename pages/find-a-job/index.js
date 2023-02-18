@@ -20,7 +20,12 @@ const FindAJob = () => {
       })
   }, [])
 
-  if (isLoading) return <p>Loading...</p>
+  if (isLoading)
+  return (
+    <div className="m-5 text-center text-black">
+      <h4>Loading...</h4>
+    </div>
+  );
   if (!data) return <p>No profile data</p>
   
   return (

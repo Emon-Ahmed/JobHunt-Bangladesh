@@ -1,18 +1,39 @@
 import Head from "next/head";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../../components/Frontend/Header/NavBar";
 import Newsletter from "../../components/Frontend/Home/Newsletter";
 import Footer from "../../components/Frontend/Footer/Footer";
-import RecruitersDB from "./../../db/Recruiters.json";
+import RecruitersDB from "../../db/Recruiters.json";
 import { Rating } from "react-simple-star-rating";
 import PageBreadcrumb from "../../components/Utilities/PageBreadcrumb";
 import Link from "next/link";
 
 const Recruiters = () => {
+  const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch("/api/company")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
+
+  if (isLoading)
+    return (
+      <div className="m-5 text-center text-black">
+        <h4>Loading...</h4>
+      </div>
+    );
+  if (!data) return <p>No profile data</p>;
+
   return (
     <>
       <Head>
-        <title>Recruiters || Job Hunt - Bangladesh</title>
+        <title>Company || Job Hunt - Bangladesh</title>
         <meta
           name="description"
           content="Recruiters || Job Hunt - Bangladesh || This Website is for job seekers in Bangladesh"
@@ -24,7 +45,7 @@ const Recruiters = () => {
 
       <div className="container">
         <PageBreadcrumb
-          title="Top Recruiters"
+          title="Top Company"
           description="Discover your next career move, freelance gig, or internship"
         />
         <div className="mt-4 d-flex justify-content-between align-items-center">
@@ -44,7 +65,7 @@ const Recruiters = () => {
         <hr />
         <div className="py-3">
           <div className="row">
-            {RecruitersDB.map((recruiter) => (
+            {data.map((recruiter) => (
               <div
                 key={recruiter.id}
                 className="col-xl-3 col-md-6 col-lg-4 g-2"
@@ -53,16 +74,16 @@ const Recruiters = () => {
                   <div className="d-flex align-items-center flex-column justify-content-center">
                     <img
                       className="img48 rounded"
-                      src={recruiter.img}
+                      src={recruiter.company_icon}
                       alt="Company"
                     />
                     <div className="d-flex flex-column align-items-center">
                       <Link
                         className="text-black text-decoration-none"
-                        href={`/recruiters/${recruiter.name}`}
+                        href={`/company/${recruiter.company_name}`}
                       >
                         <h4 className="pt-2 fw-bolder cursorPointer">
-                          {recruiter.name}
+                          {recruiter.company_name}
                         </h4>
                       </Link>
                       <div className="d-flex align-items-center">
@@ -70,7 +91,7 @@ const Recruiters = () => {
                           <Rating
                             readonly="false"
                             size="17"
-                            initialValue={recruiter?.rate}
+                            initialValue={recruiter?.company_rating}
                           />
                         </span>
                       </div>
@@ -81,12 +102,12 @@ const Recruiters = () => {
                     <div className="d-flex align-items-center py-2">
                       <img src="/media/img/location.svg" alt="Jobs Type" />
                       <span className="fontSize13 secondary-text ps-1 fw-bold">
-                        {recruiter.location}
+                        {recruiter.company_location}
                       </span>
                     </div>
                     <div className="d-flex my-4 px-5 py-3 recruiters-btn rounded-1 align-items-center justify-content-center cursorPointer">
                       <span className="fontSize13 primary-color">
-                        {recruiter.jobs} Open Jobs
+                        {recruiter.company_jobs} Open Jobs
                       </span>
                     </div>
                   </div>

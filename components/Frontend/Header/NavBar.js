@@ -42,8 +42,8 @@ function NavBar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" href="/recruiters">
-                  Recruiters
+                <Link className="nav-link" href="/company">
+                  Company
                 </Link>
               </li>
               <li className="nav-item">

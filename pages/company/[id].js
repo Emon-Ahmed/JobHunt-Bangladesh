@@ -3,12 +3,12 @@ import Head from "next/head";
 import Link from "next/link";
 import { BsTelephone } from "react-icons/bs";
 
-import JobsDB from "./../../db/jobs.json";
+import JobsDB from "../../db/jobs.json";
 
 import NavBar from "../../components/Frontend/Header/NavBar";
 import Newsletter from "../../components/Frontend/Home/Newsletter";
 import Footer from "../../components/Frontend/Footer/Footer";
-const RecruiterDetails = () => {
+const CompanyDetails = () => {
   return (
     <>
       <Head>
@@ -236,4 +236,4 @@ const RecruiterDetails = () => {
   );
 };
 
-export default RecruiterDetails;
+export default CompanyDetails;
