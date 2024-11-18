@@ -1,12 +1,38 @@
 [
-    {
-        "id": 1,
-        "name": "BD THEMES",
-        "tagline": "Our Mission To Make Working Life Simple",
-        "description": "Welcome to BD Themes Team",
-        "address": "Dhaka, Bangladesh",
-        "email": "contact@bdthemes.com",
-        "phone" : "+880"
-        
-    }
+  {
+    "id": 1,
+    "name": "BD THEMES",
+    "tagline": "Our Mission To Make Working Life Simple",
+    "description": "Welcome to BD Themes Team",
+    "address": "Dhaka, Bangladesh",
+    "email": "contact@bdthemes.com",
+    "phone": "+8801234567890"
+  },
+  {
+    "id": 2,
+    "name": "Google",
+    "tagline": "Organize the world's information and make it universally accessible and useful.",
+    "description": "Google is a multinational technology company specializing in Internet-related services and products.",
+    "address": "Mountain View, California, USA",
+    "email": "support@google.com",
+    "phone": "+1-650-253-0000"
+  },
+  {
+    "id": 3,
+    "name": "Apple",
+    "tagline": "Think Different.",
+    "description": "Apple is an American multinational technology company that designs, manufactures, and markets consumer electronics and software.",
+    "address": "Cupertino, California, USA",
+    "email": "contact@apple.com",
+    "phone": "+1-800-275-2273"
+  },
+  {
+    "id": 4,
+    "name": "Tesla",
+    "tagline": "To create the most compelling car company of the 21st century by driving the world's transition to electric vehicles.",
+    "description": "Tesla is an American electric vehicle and clean energy company.",
+    "address": "Palo Alto, California, USA",
+    "email": "support@tesla.com",
+    "phone": "+1-888-518-3752"
+  }
 ]

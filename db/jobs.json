@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "name": "Senior Full Stack",
-    "type": "Fulltime",
-    "create_at": "3days ago",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto eveniet, dolor quo repellendus pariatur.",
+    "name": "FullStack Developer",
+    "type": "Full-time",
+    "create_at": "3 days ago",
+    "description": "We are seeking an experienced Full Stack Developer to join our dynamic team. The ideal candidate will have a strong background in both front-end and back-end technologies, with a passion for building scalable web applications.",
     "candidates_id": "candidates_01",
     "company_id": "company_01",
     "company_name": "Dhaka Software",
@@ -12,169 +12,108 @@
     "company_icon": "/media/img/skillSet/management.svg",
     "job_id": "job_01",
     "employment_info": [
-      { "industry": "Software Engineer" },
+      { "industry": "Software Engineering" },
       { "job_level": "Experienced" },
-      { "salary": "$800" },
+      { "salary": "$800/month" },
       { "job_type": "Permanent" },
-      { "deadline": "10/10/2022" },
-      { "updated": "15/10/2022" },
+      { "deadline": "10/10/2024" },
+      { "updated": "15/10/2024" },
       { "location": "Dhaka" },
       {
         "skills": [
           { "skill": "HTML" },
           { "skill": "CSS" },
-          { "skill": "JS" },
-          { "skill": "ReactJs" }
+          { "skill": "JavaScript" },
+          { "skill": "ReactJS" },
+          { "skill": "Node.js" }
         ]
       }
     ]
   },
   {
     "id": 2,
-    "name": "Senior Full Stack",
-    "type": "Fulltime",
-    "create_at": "3days ago",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto eveniet, dolor quo repellendus pariatur.",
-    "candidates_id": "candidates_01",
-    "company_id": "company_01",
-    "company_name": "Dhaka Software",
+    "name": "UI/UX Designer ",
+    "type": "Full-time",
+    "create_at": "5 days ago",
+    "description": "Join our creative team as a UI/UX Designer. You will be responsible for designing intuitive and engaging user interfaces for our web and mobile applications, ensuring a seamless user experience.",
+    "candidates_id": "candidates_02",
+    "company_id": "company_02",
+    "company_name": "Creative Solutions",
     "company_address": "Dhaka, Bangladesh",
-    "company_icon": "/media/img/skillSet/management.svg",
-    "job_id": "job_01",
+    "company_icon": "/media/img/skillSet/design.svg",
+    "job_id": "job_02",
     "employment_info": [
-      { "industry": "Web Developer" },
-      { "job_level": "Experienced" },
-      { "salary": "$800" },
+      { "industry": "Design" },
+      { "job_level": "Mid-Level" },
+      { "salary": "$600/month" },
       { "job_type": "Permanent" },
-      { "deadline": "10/10/2022" },
-      { "updated": "15/10/2022" },
+      { "deadline": "15/10/2024" },
+      { "updated": "20/10/2024" },
       { "location": "Dhaka" },
       {
         "skills": [
-          { "skill": "HTML" },
-          { "skill": "CSS" },
-          { "skill": "JS" },
-          { "skill": "ReactJs" }
+          { "skill": "Adobe XD" },
+          { "skill": "Figma" },
+          { "skill": "Sketch" },
+          { "skill": "Wireframing" },
+          { "skill": "Prototyping" }
         ]
       }
     ]
   },
   {
     "id": 3,
-    "name": "Senior Full Stack",
-    "type": "Fulltime",
-    "create_at": "3days ago",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto eveniet, dolor quo repellendus pariatur.",
-    "candidates_id": "candidates_01",
-    "company_id": "company_01",
-    "company_name": "Dhaka Software",
+    "name": "Marketing Manager",
+    "type": "Full-time",
+    "create_at": "7 days ago",
+    "description": "We are looking for a Digital Marketing Manager to develop and implement online marketing strategies to drive traffic and sales. The role involves managing social media campaigns, SEO, and online advertising.",
+    "candidates_id": "candidates_03",
+    "company_id": "company_03",
+    "company_name": "Tech Innovators",
     "company_address": "Dhaka, Bangladesh",
-    "company_icon": "/media/img/skillSet/management.svg",
-    "job_id": "job_01",
+    "company_icon": "/media/img/skillSet/marketing.svg",
+    "job_id": "job_03",
     "employment_info": [
-      { "industry": "Graphics Designer" },
-      { "job_level": "Experienced" },
-      { "salary": "$800" },
+      { "industry": "Marketing" },
+      { "job_level": "Senior" },
+      { "salary": "$1,000/month" },
       { "job_type": "Permanent" },
-      { "deadline": "10/10/2022" },
-      { "updated": "15/10/2022" },
+      { "deadline": "20/10/2024" },
+      { "updated": "25/10/2024" },
       { "location": "Dhaka" },
       {
         "skills": [
-          { "skill": "HTML" },
-          { "skill": "CSS" },
-          { "skill": "JS" },
-          { "skill": "ReactJs" }
+          { "skill": "SEO" },
+          { "skill": "Content Marketing" },
+          { "skill": "Google Analytics" }
         ]
       }
     ]
   },
   {
     "id": 4,
-    "name": "Senior Full Stack",
-    "type": "Fulltime",
-    "create_at": "3days ago",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto eveniet, dolor quo repellendus pariatur.",
-    "candidates_id": "candidates_01",
-    "company_id": "company_01",
-    "company_name": "Dhaka Software",
+    "name": "SQA Engineer",
+    "type": "Full-time",
+    "create_at": "10 days ago",
+    "description": "We are seeking a Software Quality Assurance Engineer to ensure the quality and functionality of our software products. Responsibilities include creating test plans, executing tests, and reporting defects.",
+    "candidates_id": "candidates_04",
+    "company_id": "company_04",
+    "company_name": "Innovative Tech",
     "company_address": "Dhaka, Bangladesh",
-    "company_icon": "/media/img/skillSet/management.svg",
-    "job_id": "job_01",
+    "company_icon": "/media/img/skillSet/quality.svg",
+    "job_id": "job_04",
     "employment_info": [
-      { "industry": "Marketing & Sales" },
-      { "job_level": "Experienced" },
-      { "salary": "$800" },
+      { "industry": "Quality Assurance" },
+      { "job_level": "Entry-Level" },
+      { "salary": "$500/month" },
       { "job_type": "Permanent" },
-      { "deadline": "10/10/2022" },
-      { "updated": "15/10/2022" },
+      { "deadline": "25/10/2024" },
+      { "updated": "30/10/2024" },
       { "location": "Dhaka" },
       {
         "skills": [
-          { "skill": "HTML" },
-          { "skill": "CSS" },
-          { "skill": "JS" },
-          { "skill": "ReactJs" }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "name": "Senior Full Stack",
-    "type": "Fulltime",
-    "create_at": "3days ago",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto eveniet, dolor quo repellendus pariatur.",
-    "candidates_id": "candidates_01",
-    "company_id": "company_01",
-    "company_name": "Dhaka Software",
-    "company_address": "Dhaka, Bangladesh",
-    "company_icon": "/media/img/skillSet/management.svg",
-    "job_id": "job_01",
-    "employment_info": [
-      { "industry": "Web Designer" },
-      { "job_level": "Experienced" },
-      { "salary": "$800" },
-      { "job_type": "Permanent" },
-      { "deadline": "10/10/2022" },
-      { "updated": "15/10/2022" },
-      { "location": "Dhaka" },
-      {
-        "skills": [
-          { "skill": "HTML" },
-          { "skill": "CSS" },
-          { "skill": "JS" },
-          { "skill": "ReactJs" }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 6,
-    "name": "Senior Full Stack",
-    "type": "Fulltime",
-    "create_at": "3days ago",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto eveniet, dolor quo repellendus pariatur.",
-    "candidates_id": "candidates_01",
-    "company_id": "company_01",
-    "company_name": "Dhaka Software",
-    "company_address": "Dhaka, Bangladesh",
-    "company_icon": "/media/img/skillSet/management.svg",
-    "job_id": "job_01",
-    "employment_info": [
-      { "industry": "Android Developer" },
-      { "job_level": "Experienced" },
-      { "salary": "$800" },
-      { "job_type": "Permanent" },
-      { "deadline": "10/10/2022" },
-      { "updated": "15/10/2022" },
-      { "location": "Dhaka" },
-      {
-        "skills": [
-          { "skill": "HTML" },
-          { "skill": "CSS" },
-          { "skill": "JS" },
-          { "skill": "ReactJs" }
+          { "skill": "Manual Testing" },
+          { "skill": "Automation Testing" }
         ]
       }
     ]

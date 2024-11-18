@@ -3,70 +3,56 @@
     "id": 1,
     "name": "Emon Ahmed",
     "designation": "Web Developer",
-    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/user1.png",
+    "img": "https://avatars.githubusercontent.com/u/61699936?v=4",
     "social": [
-      { "facebook": "#" },
-      { "twitter": "#" },
-      { "instagram": "#" },
-      { "linkedin": "#" }
+      { "facebook": "https://www.facebook.com/EmonAhmedofficialpage/" },
+      { "twitter": "https://twitter.com/EmonAhmed" },
+      { "instagram": "https://www.instagram.com/EmonAhmed" },
+      { "linkedin": "https://www.linkedin.com/in/EmonAhmed" }
     ],
     "location": "Dhaka",
     "rate": 5
   },
   {
     "id": 2,
-    "name": "Floyd Miles",
-    "designation": "Photo Editing",
-    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/user2.png",
+    "name": "Aisha Khan",
+    "designation": "Front-End Developer",
+    "img": "https://medium.com/@aishakhan0925/about",
     "social": [
-      { "facebook": "#" },
-      { "twitter": "#" },
-      { "instagram": "#" },
-      { "linkedin": "#" }
+      { "facebook": "https://www.facebook.com/AishaKhan" },
+      { "twitter": "https://twitter.com/AishaKhan" },
+      { "instagram": "https://www.instagram.com/AishaKhan" },
+      { "linkedin": "https://www.linkedin.com/in/AishaKhan" }
     ],
     "location": "Dhaka",
-    "rate": 4
+    "rate": 4.8
   },
   {
     "id": 3,
-    "name": "Floyd Miles",
-    "designation": "Photo Editing",
-    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/user3.png",
+    "name": "Sophia Lee",
+    "designation": "Web Developer",
+    "img": "https://www.idcrawl.com/sophia-lee",
     "social": [
-      { "facebook": "#" },
-      { "twitter": "#" },
-      { "instagram": "#" },
-      { "linkedin": "#" }
+      { "facebook": "https://www.facebook.com/SophiaLee" },
+      { "twitter": "https://twitter.com/SophiaLee" },
+      { "instagram": "https://www.instagram.com/SophiaLee" },
+      { "linkedin": "https://www.linkedin.com/in/SophiaLee" }
     ],
     "location": "Dhaka",
-    "rate": 5
+    "rate": 4.9
   },
   {
     "id": 4,
-    "name": "Floyd Miles",
-    "designation": "Photo Editing",
-    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/user4.png",
+    "name": "Carlos García",
+    "designation": "Backend Developer",
+    "img": "https://theorg.com/org/finnovating/org-chart/carlos-i-garcia",
     "social": [
-      { "facebook": "#" },
-      { "twitter": "#" },
-      { "instagram": "#" },
-      { "linkedin": "#" }
+      { "facebook": "https://www.facebook.com/CarlosGarcía" },
+      { "twitter": "https://twitter.com/CarlosGarcía" },
+      { "instagram": "https://www.instagram.com/CarlosGarcía" },
+      { "linkedin": "https://www.linkedin.com/in/CarlosGarcía" }
     ],
     "location": "Dhaka",
-    "rate": 5
-  },
-  {
-    "id": 5,
-    "name": "Floyd Miles",
-    "designation": "Photo Editing",
-    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/user5.png",
-    "social": [
-      { "facebook": "#" },
-      { "twitter": "#" },
-      { "instagram": "#" },
-      { "linkedin": "#" }
-    ],
-    "location": "Dhaka",
-    "rate": 5
+    "rate": 4.7
   }
 ]

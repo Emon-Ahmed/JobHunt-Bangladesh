@@ -1,66 +1,34 @@
 [
   {
     "id": 1,
-    "name": "Linkedin",
-    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/brands/brand-1.png",
+    "name": "LinkedIn",
+    "img": "https://static.vecteezy.com/system/resources/previews/023/986/970/non_2x/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png",
     "location": "Dhaka",
     "jobs": "20",
     "rate": 5
   },
   {
     "id": 2,
-    "name": "Adobe",
-    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/brands/brand-2.png",
-    "location": "New York, US",
-    "jobs": "20",
-    "rate": 4
+    "name": "Google",
+    "img": "https://cdn4.iconfinder.com/data/icons/logos-brands-7/512/google_logo-google_icongoogle-512.png",
+    "location": "Dhaka",
+    "jobs": "15",
+    "rate": 4.8
   },
   {
     "id": 3,
-    "name": "Dailymotion",
-    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/brands/brand-3.png",
+    "name": "Facebook",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
     "location": "Dhaka",
-    "jobs": "20",
-    "rate": 4.5
+    "jobs": "25",
+    "rate": 4.7
   },
   {
     "id": 4,
-    "name": "NewSum",
-    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/brands/brand-4.png",
+    "name": "Microsoft",
+    "img": "https://cdn-icons-png.flaticon.com/256/732/732221.png",
     "location": "Dhaka",
-    "jobs": "20",
-    "rate": 5
-  },
-  {
-    "id": 5,
-    "name": "PowerHome",
-    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/brands/brand-5.png",
-    "location": "New York, US",
-    "jobs": "20",
-    "rate": 3
-  },
-  {
-    "id": 6,
-    "name": "Whop.com",
-    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/brands/brand-6.png",
-    "location": "Khulna",
-    "jobs": "20",
-    "rate": 4
-  },
-  {
-    "id": 7,
-    "name": "Greewood",
-    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/brands/brand-7.png",
-    "location": "Dhaka",
-    "jobs": "20",
-    "rate": 4.5
-  },
-  {
-    "id": 8,
-    "name": "Kentucky",
-    "img": "https://jobbox-nextjs.vercel.app/assets/imgs/brands/brand-8.png",
-    "location": "New York, US",
-    "jobs": "20",
-    "rate": 5
+    "jobs": "30",
+    "rate": 4.9
   }
 ]

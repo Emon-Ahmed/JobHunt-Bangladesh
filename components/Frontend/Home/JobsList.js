@@ -12,7 +12,7 @@ const JobsList = () => {
           Search and connect with the right candidates faster
         </p>
       </div>
-      <div className="text-center">
+      {/* <div className="text-center">
         <div className="jobsTab jobsTabActive m-2 px-2 py-1 d-inline-flex align-items-center">
           <img
             className="img28 m-1"
@@ -36,13 +36,16 @@ const JobsList = () => {
             </span>
           </div>
         ))}
-      </div>
+      </div> */}
       <div className="py-3">
         <div className="row">
           {JobsDB.map((jobList) => (
             <div key={jobList.id} className="col-xl-3 col-md-6 col-lg-4 g-2">
               <div className="px-2 py-4 m-2 rounded-4 border border-1 borderSecondary">
-                <Link className="text-black text-decoration-none" href={`/find-a-job/${jobList.name}`}>
+                <Link
+                  className="text-black text-decoration-none"
+                  href={`/find-a-job/${jobList.name}`}
+                >
                   <h5>{jobList.name}</h5>
                 </Link>
                 <div className="d-flex py-2 justify-content-between">
