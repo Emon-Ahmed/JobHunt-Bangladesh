@@ -24,27 +24,25 @@ const CandidatesList = () => {
                   <div className="row g-3 mb-3 align-items-center justify-content-center">
                     <div className="col-md-6 col-lg-6 p-5 p-lg-0 d-flex align-items-center justify-content-center">
                       <img
-                        className="w-100 p-1 rounded-circle"
+                        className="w-75 p-1 rounded-circle"
                         src={candidate?.img}
                         alt="Candidate"
                       />
                     </div>
                     <div className="col-md-6 col-lg-6 text-center text-md-start">
-                    <Link
+                      {/* <Link
                         className="text-black text-decoration-none"
                         href={`/candidates/${candidate.name}`}
-                      >
+                      > */}
                       <h4 className="fw-bolder noSpace">{candidate.name}</h4>
-                      </Link>
+                      {/* </Link> */}
                       <span className="fontSize14 secondary-text">
                         {candidate.designation}
                       </span>
                     </div>
                   </div>
                   <div className="fontSize12 text-center text-md-start">
-                    <p>
-                      {candidate.description}
-                    </p>
+                    <p>{candidate.description}</p>
                   </div>
                   <div className="my-2 text-center text-md-start">
                     {candidate?.skills.map((s) => (

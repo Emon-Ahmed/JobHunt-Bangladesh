@@ -4,7 +4,13 @@ import React from "react";
 import Footer from "../../components/Frontend/Footer/Footer";
 import NavBar from "../../components/Frontend/Header/NavBar";
 import Newsletter from "../../components/Frontend/Home/Newsletter";
-import { BsEye, BsBagPlus, BsBagCheck, BsBuilding, BsFilePlus } from "react-icons/bs";
+import {
+  BsEye,
+  BsBagPlus,
+  BsBagCheck,
+  BsBuilding,
+  BsFilePlus,
+} from "react-icons/bs";
 import { FaRegBuilding, FaRegUser, FaRegSun } from "react-icons/fa";
 import { useSession, signOut, getSession } from "next-auth/react";
 import MyProfile from "../../components/Backend/Profile/MyProfile";
@@ -32,13 +38,13 @@ const Profile = () => {
       <div className="container">
         <img
           className="w-100 rounded-4"
-          src="https://jobbox-nextjs.vercel.app/assets/imgs/page/candidates/img.png"
+          src="https://placehold.co/1325x355/png"
           alt="Candidate Cover"
         />
         <div className="px-5">
           <img
-            className="company_logo rounded-3"
-            src={session?.user?.image}
+            className="company_logo shadow-lg rounded-5"
+            src={"https://placehold.co/164x164/png" || session?.user?.image}
             alt="Profile"
           />
           <div className="d-flex justify-content-between align-items-start mt-2 mb-4 pb-1">

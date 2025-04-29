@@ -22,9 +22,7 @@ const JobDetails = () => {
   const [dt, setData] = useState(null);
   const [isLoading, setLoading] = useState(false);
   const router = useRouter();
-  const handleApplied = () => {
-    
-  }
+  const handleApplied = () => {};
   const { id } = router.query;
   useEffect(() => {
     setLoading(true);
@@ -56,7 +54,10 @@ const JobDetails = () => {
 
       <NavBar />
       <div className="container">
-        <img className="w-100 rounded-4" src={dt?.file} />
+        <img
+          className="w-100 rounded-4"
+          src={"https://placehold.co/1325x355/png"}
+        />
         <div className="row justify-content-between align-items-start my-4 py-3">
           <div className="col-lg-9">
             <h2 className="fw-bolder">{dt?.job_title}</h2>
@@ -77,7 +78,11 @@ const JobDetails = () => {
           </div>
           <div className="col-lg-3 text-md-right text-center py-3 py-lg-0">
             <button className="btn bg-primary-color text-white w-100 px-4 py-3">
-              <Link className="nav-link text-white" href="/sign-in" onClick={handleApplied}>
+              <Link
+                className="nav-link text-white"
+                href="/sign-in"
+                onClick={handleApplied}
+              >
                 <span className="pe-2">
                   <GoVerified />{" "}
                 </span>{" "}

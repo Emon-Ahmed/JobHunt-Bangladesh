@@ -172,7 +172,7 @@ const Footer = () => {
         <div className="row py-3">
           <div className="col-md-6">
             <p className="secondary-text fontSize14">
-              Copyright © 2022. JobHunt all right reserved
+              Copyright © {new Date().getFullYear()}. JobHunt all right reserved
             </p>
           </div>
           <div className="col-md-6 text-md-end text-start">
@@ -186,7 +186,7 @@ const Footer = () => {
               className="secondary-text text-decoration-none fontSize14"
               href="/terms"
             >
-             Terms & Conditions
+              Terms & Conditions
             </Link>
           </div>
         </div>

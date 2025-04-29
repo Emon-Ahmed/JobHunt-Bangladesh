@@ -1,9 +1,29 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import JobsDB from "./../../../db/jobs.json";
 
 const JobsList = () => {
-  const limitJobsList = JobsDB.slice(0, 5);
+  const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch("/api/job")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
+
+  if (isLoading)
+    return (
+      <div className="m-5 text-center text-black">
+        <h4>Loading...</h4>
+      </div>
+    );
+  if (!data)
+    return <p className="m-5 text-center text-black">No profile data</p>;
   return (
     <div className="my-5 container">
       <div className="text-center pt-4">
@@ -39,14 +59,14 @@ const JobsList = () => {
       </div> */}
       <div className="py-3">
         <div className="row">
-          {JobsDB.map((jobList) => (
+          {data.map((jobList) => (
             <div key={jobList.id} className="col-xl-3 col-md-6 col-lg-4 g-2">
               <div className="px-2 py-4 m-2 rounded-4 border border-1 borderSecondary">
                 <Link
                   className="text-black text-decoration-none"
-                  href={`/find-a-job/${jobList.name}`}
+                  href={`/find-a-job/${jobList._id}`}
                 >
-                  <h5>{jobList.name}</h5>
+                  <h5>{jobList.job_title}</h5>
                 </Link>
                 <div className="d-flex py-2 justify-content-between">
                   <div className="d-flex align-items-center">
@@ -62,13 +82,13 @@ const JobsList = () => {
                     </span>
                   </div>
                 </div>
-                <div className="my-2">
+                {/* <div className="my-2">
                   {jobList.employment_info[7].skills.map((s) => (
                     <span className="me-2 mb-2 btn btn-secondary-color rounded fontSize12">
                       {s?.skill}
                     </span>
                   ))}
-                </div>
+                </div> */}
                 <hr />
                 <div className="row g-0 align-items-center">
                   <div className="col-md-7 col-lg-7 col-7">

@@ -80,7 +80,7 @@ const Recruiters = () => {
                     <div className="d-flex flex-column align-items-center">
                       <Link
                         className="text-black text-decoration-none"
-                        href={`/company/${recruiter.company_name}`}
+                        href={`/company/${recruiter._id}`}
                       >
                         <h4 className="pt-2 fw-bolder cursorPointer">
                           {recruiter.company_name}
