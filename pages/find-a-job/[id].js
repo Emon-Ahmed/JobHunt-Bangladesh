@@ -24,7 +24,10 @@ const JobDetails = () => {
   const router = useRouter();
   const handleApplied = () => {};
   const { id } = router.query;
+
   useEffect(() => {
+    if (!id) return;
+
     setLoading(true);
     fetch(`/api/job/${id}`)
       .then((res) => res.json())
@@ -32,12 +35,12 @@ const JobDetails = () => {
         setData(data);
         setLoading(false);
       });
-  }, []);
-  console.log(id);
+  }, [id]);
+
   if (isLoading)
     return (
-      <div className="m-5 text-center text-black">
-        <h4>Loading...</h4>
+      <div className="loader-center">
+        <div className="loading mx-auto" role="status" aria-label="Loading"></div>
       </div>
     );
   if (!dt) return <p>No profile data</p>;

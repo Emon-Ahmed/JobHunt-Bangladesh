@@ -2,10 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useSession, signOut } from "next-auth/react";
-import { BsPersonCircle } from "react-icons/bs";
+import {
+  BsBoxArrowRight,
+  BsPerson,
+} from "react-icons/bs";
 
 function NavBar() {
   const { data: session } = useSession();
+  const userName = session?.user?.name || "Profile";
+  const userInitial = userName.charAt(0).toUpperCase();
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light py-4">
@@ -76,34 +82,48 @@ function NavBar() {
                 </Link>
               </div>
             ) : (
-              <div className="d-flex register-btn">
-                <div class="dropdown">
+              <div className="d-flex align-items-center register-btn gap-2">
+                <div className="dropdown">
                   <button
-                    class="btn fs-5 dropdown-toggle"
+                    className="profile-menu-toggle dropdown-toggle"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    <BsPersonCircle />
+                    {session?.user?.image ? (
+                      <img
+                        className="profile-menu-avatar"
+                        src={session.user.image}
+                        alt={userName}
+                      />
+                    ) : (
+                      <span className="profile-menu-avatar profile-menu-initial">
+                        {userInitial}
+                      </span>
+                    )}
+                    <span className="profile-menu-text">
+                      <span className="profile-menu-label">Signed in as</span>
+                      <span className="profile-menu-name">{userName}</span>
+                    </span>
                   </button>
-                  <ul class="dropdown-menu">
-                    <li className="text-decoration-none">
-                      <Link href="/profile">
-                        <button class="dropdown-item " type="button">
-                          Profile
-                        </button>
+                  <ul className="dropdown-menu dropdown-menu-end profile-dropdown-menu">
+                    <li>
+                      <Link
+                        className="dropdown-item profile-dropdown-item"
+                        href="/profile"
+                      >
+                        <BsPerson className="me-2" />
+                        Profile
                       </Link>
                     </li>
                     <li>
-                      <button class="dropdown-item" type="button">
-                        <Link href="/sign-in">
-                          <button
-                            onClick={() => signOut()}
-                            className="btn bg-danger text-white px-3 py-1"
-                          >
-                            <spam className="nav-link text-white">Logout</spam>
-                          </button>
-                        </Link>
+                      <button
+                        className="dropdown-item profile-dropdown-item text-danger"
+                        type="button"
+                        onClick={() => signOut({ callbackUrl: "/sign-in" })}
+                      >
+                        <BsBoxArrowRight className="me-2" />
+                        Logout
                       </button>
                     </li>
                   </ul>

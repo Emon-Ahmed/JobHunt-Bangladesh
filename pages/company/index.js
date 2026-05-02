@@ -24,8 +24,8 @@ const Recruiters = () => {
 
   if (isLoading)
     return (
-      <div className="m-5 text-center text-black">
-        <h4>Loading...</h4>
+      <div className="loader-center">
+        <div className="loading mx-auto" role="status" aria-label="Loading"></div>
       </div>
     );
   if (!data) return <p>No profile data</p>;

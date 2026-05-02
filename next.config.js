@@ -2,7 +2,7 @@
 const nextConfig = {
   env: {
     // BASE_URL: "https://jobhunt-bangladesh.vercel.app",
-    BASE_URL: "http://localhost:3000",
+    BASE_URL: process.env.BASE_URL || "http://localhost:3000",
   },
   reactStrictMode: true,
 };

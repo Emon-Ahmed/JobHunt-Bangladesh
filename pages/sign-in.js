@@ -9,6 +9,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useRouter } from "next/router";
 
 const SingIn = () => {
+  const [isRedirecting, setRedirecting] = useState(false);
+
   const validate = (values) => {
     const errors = {};
     if (!values.email) {
@@ -39,6 +41,12 @@ const SingIn = () => {
 
       <NavBar />
 
+      {isRedirecting && (
+        <div className="full-page-loader" role="status" aria-label="Redirecting">
+          <div className="loading"></div>
+        </div>
+      )}
+
       <div className="container py-5 my-5">
         <div className="row">
           <div className="col-lg-4 col-md-6 col-sm-12 mx-auto">
@@ -54,18 +62,39 @@ const SingIn = () => {
                 email: "",
                 password: "",
               }}
-              onSubmit={async (values) => {
-                const status = await signIn("credentials", {
-                  redirect: false,
-                  email: values.email,
-                  password: values.password,
-                  callbackUrl: "/profile",
-                });
-                if (status.ok) router.push(status.url);
+              onSubmit={async (values, { setSubmitting, setStatus }) => {
+                setStatus("");
+
+                try {
+                  const status = await signIn("credentials", {
+                    redirect: false,
+                    email: values.email,
+                    password: values.password,
+                    callbackUrl: "/profile",
+                  });
+
+                  if (status?.ok) {
+                    setRedirecting(true);
+                    router.push(status.url);
+                    return;
+                  }
+
+                  setStatus(status?.error || "Email or password is incorrect");
+                } catch (error) {
+                  setStatus("Something went wrong. Please try again.");
+                } finally {
+                  setSubmitting(false);
+                }
               }}
               validate={validate}
             >
+              {({ isSubmitting, status }) => (
               <Form className="login-register text-start my-5">
+                {status && (
+                  <div className="alert alert-danger fontSize14" role="alert">
+                    {status}
+                  </div>
+                )}
                 <div className="form-group">
                   <label className="form-label fontSize14" htmlFor="email">
                     Email address *
@@ -112,8 +141,19 @@ const SingIn = () => {
                     className="login-btn w-100"
                     type="submit"
                     name="login"
+                    disabled={isSubmitting}
                   >
-                    Login
+                    {isSubmitting ? (
+                      <>
+                        <span
+                          className="spinner-border spinner-border-sm me-2"
+                          aria-hidden="true"
+                        ></span>
+                        Logging in...
+                      </>
+                    ) : (
+                      "Login"
+                    )}
                   </button>
                 </div>
                 <div className="text-muted text-center">
@@ -123,6 +163,7 @@ const SingIn = () => {
                   </Link>
                 </div>
               </Form>
+              )}
             </Formik>
           </div>
         </div>

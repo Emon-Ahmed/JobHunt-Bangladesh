@@ -1,5 +1,4 @@
 import NextAuth from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import connectDB from "../../../database/connection";
 import Users from "../../../model/Schema";
@@ -10,15 +9,13 @@ export default NextAuth({
     CredentialsProvider({
       name: "Credentials",
       async authorize(credentials, req) {
-        connectDB().catch((error) => {
-          error: "Connection failed";
-        });
+        await connectDB();
 
-        const result = await Users.findOne({ email: credentials.email });
+        const result = await Users.findOne({ email: credentials.email }).lean();
         if (!result) {
           throw new Error("No User Found");
         }
-        // compare()
+
         const checkPassword = await compare(
           credentials.password,
           result.password
@@ -26,9 +23,15 @@ export default NextAuth({
         if (!checkPassword || result.email !== credentials.email) {
           throw new Error("Email or Password Doesn't Match");
         }
-        return result;
+
+        return {
+          id: result._id.toString(),
+          name: result.fullname || result.username,
+          email: result.email,
+          role: result.role,
+        };
       },
     }),
   ],
-  secret: "YkZUU+Fj+Em8UXqiHSGPBYTQ9fwqxmoDInSH+jQiatM="
+  secret: "YkZUU+Fj+Em8UXqiHSGPBYTQ9fwqxmoDInSH+jQiatM=",
 });

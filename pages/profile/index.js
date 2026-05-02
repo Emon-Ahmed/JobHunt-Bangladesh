@@ -4,13 +4,7 @@ import React from "react";
 import Footer from "../../components/Frontend/Footer/Footer";
 import NavBar from "../../components/Frontend/Header/NavBar";
 import Newsletter from "../../components/Frontend/Home/Newsletter";
-import {
-  BsEye,
-  BsBagPlus,
-  BsBagCheck,
-  BsBuilding,
-  BsFilePlus,
-} from "react-icons/bs";
+import { BsBagPlus, BsBagCheck, BsBuilding, BsFilePlus } from "react-icons/bs";
 import { FaRegBuilding, FaRegUser, FaRegSun } from "react-icons/fa";
 import { useSession, signOut, getSession } from "next-auth/react";
 import MyProfile from "../../components/Backend/Profile/MyProfile";
@@ -43,7 +37,7 @@ const Profile = () => {
         />
         <div className="px-5">
           <img
-            className="company_logo shadow-lg rounded-5"
+            className="company_logo shadow-lg rounded-circle"
             src={"https://placehold.co/164x164/png" || session?.user?.image}
             alt="Profile"
           />
@@ -73,14 +67,6 @@ const Profile = () => {
               </span>
             </div>
 
-            <button className="btn bg-primary-color text-white fw-bolder px-5 py-3">
-              <Link className="nav-link text-white" href="/sign-in">
-                <span className="pe-3 fontSize17">
-                  <BsEye />
-                </span>
-                Preview
-              </Link>
-            </button>
           </div>
         </div>
         <hr />

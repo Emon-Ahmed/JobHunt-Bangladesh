@@ -5,7 +5,13 @@ import NavBar from "../components/Frontend/Header/NavBar";
 import Footer from "../components/Frontend/Footer/Footer";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useRouter } from "next/router";
+import { signIn } from "next-auth/react";
+import { useState } from "react";
+
 const Register = () => {
+  const router = useRouter();
+  const [isRedirecting, setRedirecting] = useState(false);
+
   const validate = (values) => {
     const errors = {};
 
@@ -47,7 +53,44 @@ const Register = () => {
 
     return errors;
   };
-  const router = useRouter();
+
+  const handleSubmit = async (values, { setSubmitting, setStatus }) => {
+    setStatus("");
+
+    try {
+      const res = await fetch("/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      const data = await res.json();
+
+      if (!res.ok || !data?.status) {
+        setStatus(data?.message || "Registration failed");
+        return;
+      }
+
+      const loginStatus = await signIn("credentials", {
+        redirect: false,
+        email: values.email,
+        password: values.password,
+        callbackUrl: "/profile",
+      });
+
+      if (loginStatus?.ok) {
+        setRedirecting(true);
+        router.push(loginStatus.url);
+        return;
+      }
+
+      setStatus(loginStatus?.error || "Login failed after signup");
+    } catch (error) {
+      setStatus("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <>
       <Head>
@@ -60,6 +103,12 @@ const Register = () => {
       </Head>
 
       <NavBar />
+
+      {isRedirecting && (
+        <div className="full-page-loader" role="status" aria-label="Redirecting">
+          <div className="loading"></div>
+        </div>
+      )}
 
       <div className="container py-5 my-5">
         <div className="row">
@@ -80,154 +129,154 @@ const Register = () => {
                 cpassword: "",
                 role: "",
               }}
-              onSubmit={async (values) => {
-                const options = {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify(values),
-                };
-                await fetch(`${process.env.BASE_URL}/api/auth/signup`, options)
-                  .then((res) => res.json())
-                  .then((data) => {
-                    if (data) router.push(`${process.env.BASE_URL}`);
-                  });
-              }}
+              onSubmit={handleSubmit}
               validate={validate}
             >
-              <Form className="login-register text-start my-5">
-                <div className="form-group">
-                  <label className="form-label fontSize14" htmlFor="input-1">
-                    Full Name *
-                  </label>
-                  <Field
-                    className="no-outline"
-                    id="input-1"
-                    type="text"
-                    required
-                    name="fullname"
-                    placeholder="Your full name"
-                  />
-                  <div className="fontSize14 pt-1 text-center text-danger">
-                    <ErrorMessage name="fullname" />
-                  </div>
-                </div>
-                <div className="form-group">
-                  <label className="form-label fontSize14" htmlFor="input-email">
-                    Email address*
-                  </label>
-                  <Field
-                    className="no-outline"
-                    id="input-email"
-                    type="text"
-                    required
-                    name="email"
-                    placeholder="example@gmail.com"
-                  />
-                  <div className="fontSize14 pt-1 text-center text-danger">
-                    <ErrorMessage name="email" />
-                  </div>
-                </div>
-                <div className="form-group">
-                  <label className="form-label fontSize14" htmlFor="input-1">
-                    Username *
-                  </label>
-                  <Field
-                    className="no-outline"
-                    id="input-1"
-                    type="text"
-                    required
-                    name="username"
-                    placeholder="username"
-                  />
-                  <div className="fontSize14 pt-1 text-center text-danger">
-                    <ErrorMessage name="username" />
-                  </div>
-                </div>
-                <div className="form-group">
-                  <label className="form-label fontSize14" htmlFor="input-4">
-                    Password *
-                  </label>
-
-                  <Field
-                    className=" no-outline"
-                    id="input-4"
-                    type="password"
-                    required
-                    name="password"
-                    placeholder="************"
-                  />
-                  <div className="fontSize14 pt-1 text-center text-danger">
-                    <ErrorMessage name="password" />
-                  </div>
-                </div>
-                <div className="form-group">
-                  <label className="form-label fontSize14" htmlFor="input-5">
-                    Re-Password *
-                  </label>
-                  <Field
-                    className=" no-outline"
-                    id="input-5"
-                    type="password"
-                    required
-                    name="cpassword"
-                    placeholder="************"
-                  />
-                  <div className="fontSize14 pt-1 text-center text-danger">
-                    <ErrorMessage name="cpassword" />
-                  </div>
-                </div>
-                <div className="d-flex align-items-center justify-content-between">
-                  <div className="form-check d-flex  align-items-center">
-                    <Field
-                      className="form-check-input"
-                      type="radio"
-                      name="role"
-                      id="candidate"
-                      value="candidate"
-                    />
-                    <label
-                      className="form-check-label ms-1"
-                      htmlFor="candidate"
-                    >
-                      Candidate
+              {({ isSubmitting, status }) => (
+                <Form className="login-register text-start my-5">
+                  {status && (
+                    <div className="alert alert-danger fontSize14" role="alert">
+                      {status}
+                    </div>
+                  )}
+                  <div className="form-group">
+                    <label className="form-label fontSize14" htmlFor="fullname">
+                      Full Name *
                     </label>
-                  </div>
-                  <div className="form-check d-flex  align-items-center">
                     <Field
-                      className="form-check-input"
-                      type="radio"
-                      name="role"
-                      id="Recruiter"
-                      value="recruiter"
+                      className="no-outline"
+                      id="fullname"
+                      type="text"
+                      required
+                      name="fullname"
+                      placeholder="Your full name"
                     />
-                    <label
-                      className="form-check-label ms-1"
-                      htmlFor="Recruiter"
-                    >
-                      Recruiter
-                    </label>
+                    <div className="fontSize14 pt-1 text-center text-danger">
+                      <ErrorMessage name="fullname" />
+                    </div>
                   </div>
-                </div>
-                <div className="fontSize14 pt-1 text-center text-danger">
-                  <ErrorMessage name="role" />
-                </div>
+                  <div className="form-group">
+                    <label className="form-label fontSize14" htmlFor="email">
+                      Email address *
+                    </label>
+                    <Field
+                      className="no-outline"
+                      id="email"
+                      type="text"
+                      required
+                      name="email"
+                      placeholder="example@gmail.com"
+                    />
+                    <div className="fontSize14 pt-1 text-center text-danger">
+                      <ErrorMessage name="email" />
+                    </div>
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label fontSize14" htmlFor="username">
+                      Username *
+                    </label>
+                    <Field
+                      className="no-outline"
+                      id="username"
+                      type="text"
+                      required
+                      name="username"
+                      placeholder="username"
+                    />
+                    <div className="fontSize14 pt-1 text-center text-danger">
+                      <ErrorMessage name="username" />
+                    </div>
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label fontSize14" htmlFor="password">
+                      Password *
+                    </label>
+                    <Field
+                      className="no-outline"
+                      id="password"
+                      type="password"
+                      required
+                      name="password"
+                      placeholder="************"
+                    />
+                    <div className="fontSize14 pt-1 text-center text-danger">
+                      <ErrorMessage name="password" />
+                    </div>
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label fontSize14" htmlFor="cpassword">
+                      Re-Password *
+                    </label>
+                    <Field
+                      className="no-outline"
+                      id="cpassword"
+                      type="password"
+                      required
+                      name="cpassword"
+                      placeholder="************"
+                    />
+                    <div className="fontSize14 pt-1 text-center text-danger">
+                      <ErrorMessage name="cpassword" />
+                    </div>
+                  </div>
+                  <div className="d-flex align-items-center justify-content-between">
+                    <div className="form-check d-flex align-items-center">
+                      <Field
+                        className="form-check-input"
+                        type="radio"
+                        name="role"
+                        id="candidate"
+                        value="candidate"
+                      />
+                      <label className="form-check-label ms-1" htmlFor="candidate">
+                        Candidate
+                      </label>
+                    </div>
+                    <div className="form-check d-flex align-items-center">
+                      <Field
+                        className="form-check-input"
+                        type="radio"
+                        name="role"
+                        id="recruiter"
+                        value="recruiter"
+                      />
+                      <label className="form-check-label ms-1" htmlFor="recruiter">
+                        Recruiter
+                      </label>
+                    </div>
+                  </div>
+                  <div className="fontSize14 pt-1 text-center text-danger">
+                    <ErrorMessage name="role" />
+                  </div>
 
-                <div className="border-remove-btn d-flex justify-content-center align-items-center my-3 text-center">
-                  <button
-                    className="login-btn w-100"
-                    type="submit"
-                    name="login"
-                  >
-                    Submit & Register
-                  </button>
-                </div>
-                <div className="text-muted text-center">
-                  Already have an account?{" "}
-                  <Link className="text-decoration-none" href="/sign-in">
-                    Sign in
-                  </Link>
-                </div>
-              </Form>
+                  <div className="border-remove-btn d-flex justify-content-center align-items-center my-3 text-center">
+                    <button
+                      className="login-btn w-100"
+                      type="submit"
+                      name="login"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <span
+                            className="spinner-border spinner-border-sm me-2"
+                            aria-hidden="true"
+                          ></span>
+                          Registering...
+                        </>
+                      ) : (
+                        "Submit & Register"
+                      )}
+                    </button>
+                  </div>
+                  <div className="text-muted text-center">
+                    Already have an account?{" "}
+                    <Link className="text-decoration-none" href="/sign-in">
+                      Sign in
+                    </Link>
+                  </div>
+                </Form>
+              )}
             </Formik>
           </div>
         </div>
